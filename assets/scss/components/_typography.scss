@@ -1,0 +1,45 @@
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+
+}
+
+h3 {
+  letter-spacing: 0.5px;
+}
+
+h4 {
+
+}
+
+p {
+  font-weight: 400;
+  font-size: rem-calc(16);
+}
+
+p.header-lead {
+  font-size: rem-calc(18);
+  font-weight: bold;
+  color: $brand-grey;
+  margin-bottom: 0;
+}
+
+.color-brand {
+  color: $brand;
+}
+
+// Span Styles
+span {
+  &.strong {
+    font-weight: bold;
+  }
+}
+
+// Font Previews
+$nunito: 'Nunito', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$robotoMono: 'Roboto Mono', monospace;
+$lora: 'Lora', serif;
+$cormorant: 'Cormorant Garamond', serif;

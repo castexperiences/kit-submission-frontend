@@ -1,0 +1,25 @@
+// TODO: Set the class of the body, or page wrapper to be kit specific
+img.wax-blank {
+	max-height: 200px;
+}
+
+table.table thead th {
+	&.classic::after,
+	&.statement::after,
+	&.double::after {
+		content: '';
+		width: 8px;
+		height: 8px;
+		padding-left: 14px;
+		margin-left: 5px;
+	}
+	&.classic::after {
+		background-color: aquamarine;
+	}
+	&.statement::after {
+		background-color: burlywood;
+	}
+	&.double::after {
+		background-color: lightpink;
+	}
+}

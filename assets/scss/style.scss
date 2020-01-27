@@ -1,0 +1,43 @@
+// Font Imports
+@import url('../fonts/pn/stylesheet.css');
+@import 'components/colors';
+$font-stack: 'Proxima Nova', 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", sans-serif !default;
+
+// THEME FRAMEWORK
+// xteme angular + bootstrap 4
+@import 'framework/main';
+
+// FontAwesome Import
+@import 'icons/font-awesome/css/fontawesome-all.css';
+
+// Custom Mixins
+@import 'mixins';
+
+// Alignment Classes
+.tl {text-align:left !important;}
+.tc {text-align: center !important;}
+.tr {text-align:right !important;}
+
+// Component Specific
+@import 'components/layout';
+@import 'components/typography';
+@import 'components/forms';
+@import 'components/tables';
+@import 'components/buttons';
+@import 'components/modals';
+@import 'components/page-title';
+@import 'components/alerts';
+@import 'components/callout';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+// Page Specific
+//- Events
+@import 'pages/event-create';
+
+//- Kits
+@import 'pages/code-generator';
+
+
+// Event Submission
+@import 'pages/customer-submissions/styles';

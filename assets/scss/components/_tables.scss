@@ -1,0 +1,33 @@
+table.table {
+	$font-size: 14;
+
+	thead tr th,
+	tbody tr th {
+		padding: 1rem 0 0.7rem;
+		text-transform: none;
+		@include font-size($font-size);
+		font-weight: 600;
+		min-width: 90px;
+	}
+	thead tr th {
+		border-top: none;
+		border-bottom: 1px solid #979797;
+	}
+
+	tbody {
+		tr {
+			td {
+				padding-left: 0;
+				vertical-align: middle;
+				@include font-size($font-size);
+			}
+		}
+
+	}
+
+
+	.selected {
+		background-color: $gray-300;
+	}
+
+}

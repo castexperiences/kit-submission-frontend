@@ -1,0 +1,54 @@
+.btn {
+  font-weight: 600;
+  font-size: rem-calc(15);
+  padding: rem-calc(7, 20, 9, 20);
+
+  &-primary:focus {
+    opacity: 0.5;
+  }
+
+  &-primary,
+  &-primary:disabled,
+  &-primary.disabled {
+    color: #ffffff;
+  }
+
+  &-sm {
+    padding: 10px !important;
+  }
+  &-grey {
+    color: #fff;
+    background-color: $brand-grey;
+  }
+  &-grey:hover {
+    color: #fff;
+    background-color: $gray-700;
+  }
+
+  // Outlines
+  &-outline- {
+    &secondary {
+      color: #3C3845;
+    }
+  }
+
+}
+
+.small-button {
+  padding: 5px 10px 4px 10px;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.btn.disabled, .btn:disabled {
+    opacity: 0.45;
+}
+
+.status-pill-tooltip {
+  .tooltip-inner {
+    border-radius: 160px;
+    padding: 10px;
+  }
+}

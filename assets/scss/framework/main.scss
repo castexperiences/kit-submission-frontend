@@ -1,0 +1,17 @@
+//(Required file)
+@import 'variables';
+
+// Import Bootstrap source files (Required file)
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+//This is for the components (Required file)
+@import 'components';
+
+//This is for the components (Required file)
+@import 'components';
+
+//This is for the responsive (Required file)
+@import 'responsive';
+
+//In This scss you can write your scss
+@import 'custom';

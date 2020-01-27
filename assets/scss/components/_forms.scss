@@ -1,0 +1,192 @@
+.input-wrapper {
+	margin-bottom: 1rem;
+}
+
+.big-text-input {
+	height: 6vh;
+	text-align: center;
+	font-size: x-large;
+}
+
+.medium-text-input {
+	font-size: large;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+// Form STYLING 1
+.form-group {
+	label {
+		display: block;
+		font-size: rem-calc(15);
+		font-weight: 600;
+		text-transform: lowercase;
+		margin-bottom: 6px;
+
+		&.req:after {
+			content: '*';
+			color: theme-color($danger);
+		}
+	}
+
+	// Input fields
+	.form-control {
+		padding: rem-calc(14) rem-calc(20) rem-calc(13);
+		color: $brand-black;
+		min-height: 40px;
+
+		&::placeholder {
+			color: $gray-400;
+		}
+
+		// form has error
+		&.is-invalid-input {
+			border-color: #ff798b;
+			background-color: #f9e8ea;
+		}
+
+		// upper
+		&.upper:not(:placeholder-shown) {
+			text-transform: uppercase;
+		}
+
+	}
+
+	// Inline Field w/ Button
+	.inline-field-button {
+
+		.form-group {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			width: 100%;
+			max-width: 400px;
+
+			input {
+				width: 100%;
+				border-radius: 7px;
+				height: 50px;
+				padding-right: 60px + 13px;
+				&::placeholder {
+					color: $gray-400;
+					font-weight: 500;
+				}
+			}
+
+			.btn {
+				position: absolute;
+				margin: 5px;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				border-radius: 7px;
+				height: 40px;
+				width: 55px;
+				padding-top: 2px;
+				padding-bottom: 0px;
+			}
+
+		}
+	}
+
+	// Error messages
+	.form-error {
+		color: theme-color("primary");
+		font-size: rem-calc(13);
+		font-weight: 600;
+	}
+}
+
+
+// Radio Buttons
+.inline-options {
+	.option {
+
+		padding-left: 16px;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		input[type="radio"] {
+			display: none;
+			visibility: hidden;
+			left: -9999px;
+
+			& + label {
+				background-color: $gray-500;
+				color: #fff;
+				border: none;
+				padding: 20px;
+
+				&:hover {
+					cursor: pointer;
+					background-color: $gray-600;
+				}
+			}
+
+			&:checked + label {
+				// checked state label
+				background-color: $brand;
+
+				&:hover {
+					background-color: darken($brand, 3%);
+				}
+			}
+
+		}
+	}
+}
+
+// Address Lookup
+// Postcode Select
+.postcode-select {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+	&-btn {
+		align-self: flex-end;
+		flex-grow: 1;
+
+		.btn {
+			width: 100%;
+		}
+
+		i {
+			font-size: rem-calc(11);
+		}
+	}
+
+	&-input {
+		padding-right: 8px;
+		flex-grow: 3;
+	}
+
+	&-dropdown {
+		flex-grow: 3;
+		max-width: 100%;
+	}
+
+}
+
+.address-lookup-error {
+	font-style: italic;
+	font-weight: 600;
+	color: #fb8c00;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items {
+	max-height: 262px !important;
+}
+
+.ng-select {
+	&.ng-invalid:not(.ng-untouched) > .ng-select-container {
+		background-color: lighten(theme-color-level("danger", -10), 3%);
+	}
+}
+
+.order-count-selection {
+	padding-left: 0;
+	padding-right: 0;
+}

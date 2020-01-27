@@ -1,0 +1,262 @@
+// In this scss you can overwrite all our scss, we suggested you to add your scss into this, so whenever the update comes it will not affect your code.
+.color-success {
+    color: $success;
+}
+
+.color-muted {
+    color: $muted;
+}
+
+.color-danger {
+    color: $danger;
+}
+
+.badge-pill {
+    white-space: nowrap;
+}
+
+.modal-full {
+    height: 75vh;
+}
+
+// Progress Bar
+.progress {
+    margin-bottom: 1rem;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* Allows datetime selector to be used in modals */
+.cdk-overlay-container {
+    z-index: 1060;
+}
+
+/* TOASTR BUGFIX */
+#toast-container > div {
+    opacity: 1;
+}
+
+.toast {
+    font-size: initial !important;
+    border: initial !important;
+    backdrop-filter: blur(0) !important;
+}
+
+.toast-success {
+    background-color: $success !important;
+}
+
+.toast-error {
+    background-color: $danger !important;
+}
+
+.toast-info {
+    background-color: $info !important;
+}
+
+.toast-warning {
+    background-color: $warning !important;
+}
+
+/* END TOASTR BUGFIX */
+
+// Kit Selection Only
+section.kit-selection {
+    margin-bottom: 75px;
+
+    .kit-options {
+        //
+        $ring: #D2CAC8;
+        $pendant: #8B776C;
+        $earring: #F6C7CF;
+
+        .option {
+            text-align: center;
+
+            input[type=radio] {
+                display: inline-block;
+                display: none;
+                position: absolute;
+                left: -99999px;
+
+                & + label {
+                    background-color: #F8F9FA;
+                    border: 1px solid darken(#F8F9FA, 2%);
+                    min-height: 200px;
+                    width: 100%;
+                    border-radius: 6px;
+                    display: inline-block;
+                    padding: 15px 20px;
+                    margin: 0;
+                    position: relative;
+                    @include transition(0.2s);
+                    @include media-breakpoint-only(sm) {
+                        margin-bottom: 1rem;
+                    }
+
+                    &.ring {
+                        &:hover {
+                            border-color: darken($ring, 10%);
+
+                            .kit-picker--name {
+                                color: $ring;
+                            }
+                        }
+                    }
+
+                    &.pendant {
+                        &:hover {
+                            border-color: lighten($pendant, 10%);
+
+                            .kit-picker--name {
+                                color: $pendant;
+                            }
+                        }
+                    }
+
+                    &.earring {
+                        &:hover {
+                            border-color: lighten($earring, 5%);
+
+                            .kit-picker--name {
+                                color: $earring;
+                            }
+                        }
+                    }
+
+                    .kit-picker--name {
+                        @include transition(0.2s);
+                        text-align: left;
+                        font-size: rem-calc(16);
+                        font-weight: 600;
+                        color: #A8A8A8;
+                        padding-right: 20%;
+                    }
+
+                    .kit-picker--image {
+                        position: relative;
+                        right: 0;
+                        bottom: 0;
+                        width: 180px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    span {
+                        position: relative;
+                    }
+
+                    &:after {
+                        content: '\f00c';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        position: absolute;
+                        border-radius: 0 6px 0 6px;
+                        top: 0;
+                        right: 0;
+                        display: block;
+                        margin: 0;
+                        padding: 5px 20px;
+                        background-color: $blue;
+                        color: #fff;
+                        font-size: rem-calc(22);
+                        opacity: 0;
+                        @include media-breakpoint-only(md) {
+                            font-size: rem-calc(18);
+                            padding: 3px 10px 3px 12px;
+                        }
+                    }
+                }
+
+                &:checked + label {
+
+                    border: 1px solid $blue;
+                    width: 100%;
+                    display: inline-block;
+
+                    &:after {
+                        opacity: 1;
+                    }
+
+                    &.ring {
+                        border-color: $ring;
+
+                        .kit-picker--name {
+                            color: $ring;
+                        }
+
+                        &:after {
+                            background-color: $ring;
+                        }
+                    }
+
+                    &.pendant {
+                        border-color: $pendant;
+
+                        .kit-picker--name {
+                            color: $pendant;
+                        }
+
+                        &:after {
+                            background-color: $pendant;
+                        }
+                    }
+
+                    &.earring {
+                        border-color: $earring;
+
+                        .kit-picker--name {
+                            color: $earring;
+                        }
+
+                        &:after {
+                            background-color: $earring;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+
+.button-radio {
+    .option {
+        text-align: center;
+
+        input[type=radio] {
+            display: inline-block;
+            display: none;
+            position: absolute;
+            left: -99999px;
+
+            & + label {
+                display: block;
+                position: relative;
+                margin: 0;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                @include transition(0.2s);
+
+                .label-text {
+                    @include transition(0.2s);
+                    text-align: center;
+                    color: white;
+                }
+            }
+
+            &:checked + label {
+                border: 1px solid $black;
+                background-color: darken($pink, 10%);
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

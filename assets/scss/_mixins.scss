@@ -1,0 +1,29 @@
+// Strip Unit
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+
+// PX to REM / EM
+$browser-context: (16 * strip-unit($font-size-base)); // Default
+@function em-calc($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+@function rem-calc($px-t, $px-r:null, $px-b:null, $px-l:null) {
+  // If single value
+  @if ($px-r == null and $px-b == null and $px-l == null ) {
+    @return #{$px-t/$browser-context}rem;
+    // If 2 values
+  } @else if ( ($px-t and $px-r) and ($px-b == null and $px-l == null) ) {
+    @return #{$px-t/$browser-context}rem #{$px-r/$browser-context}rem;
+    // If 3 values
+  } @else if ($px-t and $px-r and $px-b) and ($px-l == null) {
+    @return #{$px-t/$browser-context}rem #{$px-r/$browser-context}rem #{$px-b/$browser-context}rem;
+    // If 4 values
+  } @else {
+    @return #{$px-t/$browser-context}rem #{$px-r/$browser-context}rem #{$px-b/$browser-context}rem #{$px-l/$browser-context}rem;
+  }
+}
