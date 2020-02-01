@@ -12,6 +12,9 @@
     background-color: #fff;
     border: 1px solid #EAEAEA;
     padding: rem-calc(30,50);
+    @include media-breakpoint-down(sm) {
+      padding: rem-calc(25, 20);
+    }
 
     .inner-section {
       margin-bottom: rem-calc(30);
