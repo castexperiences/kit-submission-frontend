@@ -1,8 +1,9 @@
 // Font Imports
 @import url('../fonts/pn/stylesheet.css');
-//@import url("https://use.typekit.net/nhn3bxo.css");
+@import url("https://use.typekit.net/nhn3bxo.css");
 @import 'components/colors';
-$font-stack: 'Proxima Nova', 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", sans-serif !default;
+$font-headers: filson-pro, 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", sans-serif !default;
+$font-stack: mr-eaves-xl-modern, 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", sans-serif !default;
 
 // THEME FRAMEWORK
 // xteme angular + bootstrap 4
@@ -29,6 +30,7 @@ $font-stack: 'Proxima Nova', 'Lato', -apple-system, BlinkMacSystemFont, "Segoe U
 @import 'components/page-title';
 @import 'components/alerts';
 @import 'components/callout';
+@import 'components/pdf';
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
 
