@@ -4,4 +4,9 @@
   font-size: rem-calc(18);
   border: 1px solid #CCCCCC;
   padding: rem-calc(8, 17, 9, 15);
+  white-space: nowrap;
+}
+
+.spin {
+  animation: spin 2s linear infinite;
 }
