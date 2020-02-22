@@ -14,6 +14,15 @@ table.table {
 		border-bottom: 1px solid #979797;
 	}
 
+	@mixin status-style($status, $background: #fff, $color: #000) {
+		&.status-#{$status} {
+			td.status > span {
+				color: $color;
+				background: $background;
+			}
+		}
+	}
+
 	tbody {
 		tr {
 			td {
@@ -21,13 +30,42 @@ table.table {
 				vertical-align: middle;
 				@include font-size($font-size);
 			}
+
+
+			&[class^="status-"] {
+				td.status {
+					span {
+						padding: 5px 20px;
+						line-height: 13px;
+						font-weight: 500;
+						border-radius: 2px;
+						@include font-size(14);
+					}
+				}
+			}
+			&.status-pending {
+				opacity: 0.5;
+			}
+			@include status-style('created', lighten(#32b6df, 40%), darken(#32b6df, 5%));
+			@include status-style('received', lighten(#70D820, 40%), darken(#70D820, 10%));
+			@include status-style('pending', lighten(#e98800, 40%), darken(#e98800, 10%));
+
 		}
+
+
+
 
 	}
 
 
 	.selected {
 		background-color: $gray-300;
+	}
+
+	&.kit-submissions {
+		tr.status-pending {
+			opacity: 1 !important;
+		}
 	}
 
 }
