@@ -32,6 +32,16 @@
     }
   }
 
+  &.nav-group { //inline button groups we use as navs
+    &:disabled,
+    &[disabled="true"] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events:none;
+      //filter: grayscale(100%);
+    }
+  }
+
 }
 
 .small-button {
