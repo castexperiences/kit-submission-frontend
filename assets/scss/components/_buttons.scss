@@ -2,9 +2,10 @@
   font-weight: 600;
   font-size: rem-calc(15);
   padding: rem-calc(7, 20, 9, 20);
+  transition: all 250ms cubic-bezier(.02, .01, .47, 1);
 
-  &-primary:focus {
-    opacity: 0.5;
+  &-primary:hover {
+    opacity: 0.65;
   }
 
   &-primary,
