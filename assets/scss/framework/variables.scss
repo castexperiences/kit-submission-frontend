@@ -119,6 +119,7 @@ $green: #36bea6 !default;
 $teal: #20c997 !default;
 $cyan: #4fc3f7 !default;
 $primary: #fa6f6d !default;
+$navy: #1C364C !default;
 $text-muted: $gray-500 !default;
 
 $colors: (
@@ -137,8 +138,8 @@ $colors: (
   gray-dark: $gray-800
 );
 
-$primary: $primary !default;
-$secondary: $gray-600 !default;
+$primary: $themecolor !default;
+$secondary: #1C364C !default;
 $success: $green !default;
 $info: $blue !default;
 $warning: $yellow !default;

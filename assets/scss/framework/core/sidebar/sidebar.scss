@@ -1,9 +1,9 @@
 // Sidebar
 $sidebar-link-padding: 14px 15px;
-$sidebar-icon-size: 23px;
-$sidebar-first-level-padding: 0 0 10px 0;
+$sidebar-icon-size: 16px;
+$sidebar-first-level-padding: 0 0 0 0;
 $sidebar-first-level-link-padding: 10px 15px;
-$sidebar-first-level-icon-size: 14px;
+$sidebar-first-level-icon-size: 11px;
 
 /*******************
 Main sidebar
@@ -15,10 +15,11 @@ Main sidebar
   height: 100%;
   top: 0px;
   z-index: 10;
-  padding-top: 64px;
+  padding-top: 50px;
   background: $sidebar;
-  box-shadow: $shadow;
+  //box-shadow: $shadow;
   transition: 0.2s ease-in;
+  box-shadow: inset -1px 0 0 #e5e5e5;
 }
 
 /*******************
@@ -42,9 +43,10 @@ sidebar navigation
         align-items: center;
         line-height: 25px;
         opacity: 0.6;
+        text-decoration: none;
         i {
           font-style: normal;
-          width: 35px;
+          width: 38px;
           line-height: 25px;
           font-size: $sidebar-icon-size;
           color: $sidebar-icons;
@@ -67,6 +69,7 @@ sidebar navigation
         padding: $sidebar-first-level-padding;
         .sidebar-item.active .sidebar-link {
           opacity: 1;
+          background-color: darken(#fff, 10%);
         }
         .sidebar-item .sidebar-link {
           padding: $sidebar-first-level-link-padding;
@@ -75,7 +78,27 @@ sidebar navigation
           }
         }
       }
-    }    
+    }
+
+    /*****************
+        Main sidebar <ul>
+        *********************/
+    &#sidebarnav {
+      & > .sidebar-item {
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+      & > .sidebar-item.active {
+        background: darken(#fff, 5%);
+        border-left: 3px solid $primary;
+        padding-left: 0;
+        & > .sidebar-link {
+          font-weight: bold;
+          color: $primary !important;
+        }
+      }
+    }
+
   }
 }
 
