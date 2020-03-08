@@ -69,7 +69,8 @@ sidebar navigation
         padding: $sidebar-first-level-padding;
         .sidebar-item.active .sidebar-link {
           opacity: 1;
-          background-color: darken(#fff, 10%);
+          background-color: rgba(0,0,0,0.04);
+          //git add
         }
         .sidebar-item .sidebar-link {
           padding: $sidebar-first-level-link-padding;
@@ -89,9 +90,9 @@ sidebar navigation
         padding-right: 3px;
       }
       & > .sidebar-item.active {
-        background: darken(#fff, 5%);
-        border-left: 3px solid $primary;
-        padding-left: 0;
+        background-color: rgba(0,0,0,0.04);
+        //border-left: 3px solid $primary;
+        box-shadow: inset 4px 0 0 $primary;
         & > .sidebar-link {
           font-weight: bold;
           color: $primary !important;

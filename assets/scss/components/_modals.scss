@@ -1,5 +1,11 @@
 .modal {
-  z-index: 5000;
+  // Z-Index map
+  /*
+  Datetime picker: 1000
+  Modal backdrop: 1051
+   */
+
+  z-index: 1052;
   backdrop-filter: blur(4px);
 
   .modal-header {
