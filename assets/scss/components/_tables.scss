@@ -46,8 +46,12 @@ table.table {
 			&.status-pending {
 				opacity: 0.5;
 			}
-			@include status-style('created', lighten(#32b6df, 40%), darken(#32b6df, 5%));
-			@include status-style('received', lighten(#70D820, 40%), darken(#70D820, 10%));
+			@include status-style('customer-submitted', lighten(#32b6df, 40%), darken(#32b6df, 5%));
+			@include status-style('awaiting-batching', lighten(#32b6df, 40%), darken(#32b6df, 5%));
+			@include status-style('partner-batch-created', lighten(#32b6df, 40%), darken(#32b6df, 5%));
+			@include status-style('partner-batch-in-transit', lighten(#52b68f, 40%), darken(#52b68f, 5%));
+			@include status-style('submission-received', lighten(#70D820, 40%), darken(#70D820, 10%));
+			@include status-style('updating', lighten(#f02210, 40%), darken(#f02210, 10%));
 			@include status-style('pending', lighten(#e98800, 40%), darken(#e98800, 10%));
 
 		}
