@@ -1067,9 +1067,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-@angular/forms
-MIT
-
 apollo-angular
 MIT
 The MIT License (MIT)
@@ -1121,6 +1118,9 @@ SOFTWARE.
 
 
 
+@angular/forms
+MIT
+
 zone.js
 MIT
 The MIT License
@@ -1156,4 +1156,7 @@ ngx-window-token
 MIT
 
 ngx-clipboard
+MIT
+
+ngx-dropzone
 MIT
