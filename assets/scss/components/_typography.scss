@@ -52,3 +52,52 @@ $roboto: 'Roboto', sans-serif;
 $robotoMono: 'Roboto Mono', monospace;
 $lora: 'Lora', serif;
 $cormorant: 'Cormorant Garamond', serif;
+
+
+// Code Markup Style
+pre {
+  display:block;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+code[class*="language-"], pre[class*="language-"] {
+  color: #ffffff;
+  background: none;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: normal;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+:not(pre)>code[class*="language-"], pre[class*="language-"] {
+  background: #2a2a2a;
+}
+code.language-term {
+  color: #bebec5;
+}
+.token.input {
+  color: #ffffff;
+}
+.token.prompt {
+  user-select: none;
+  pointer-events: none;
+  color: #bb9fff;
+}
