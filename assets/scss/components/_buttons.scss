@@ -30,6 +30,12 @@
   &-outline- {
     &secondary {
       color: #3C3845;
+      background: none;
+      &:hover,
+      &:active,
+      &:focus {
+        color: #fff !important;
+      }
     }
   }
 
