@@ -9,6 +9,7 @@
 
 	&.landscape {
 		width: 297mm !important;
+
 		.pdf_container {
 			height: 210mm !important;
 		}
@@ -35,6 +36,7 @@
 			display: table;
 			width: 100%;
 			height: 100%;
+
 			.inner-cell {
 				display: table-cell;
 				vertical-align: middle;
@@ -43,6 +45,7 @@
 
 		.table {
 			display: table;
+
 			.table-cell {
 				display: table-cell;
 			}
@@ -58,30 +61,37 @@
 			text-align: center;
 			margin-bottom: 2.5cm
 		}
+
 		.blurb {
 			width: 50%;
 			margin: 0 auto 2.5cm auto;
+
 			p {
 				text-align: justify;
 				font-size: 9pt;
 				line-height: 15pt;
 			}
 		}
+
 		.event-details {
 			margin: 0 auto;
 			width: 50%;
+
 			.logo {
 				text-align: right;
 				vertical-align: middle;
 				padding-right: 6mm;
 			}
+
 			.details {
 				text-align: left;
 				vertical-align: middle;
 				padding-left: 6mm;
+
 				p {
 					margin-bottom: 0;
 					font-size: 10pt;
+
 					span.date {
 						font-size: 9pt;
 						color: theme-color("primary");
@@ -92,18 +102,118 @@
 
 		// Page Layout
 		.single-page {
-			display:table;
+			display: table;
 			width: 100%;
 		}
+
 		.inline-page {
 			width: 50%;
 			height: 100%;
 			display: table-cell;
 		}
+
 		.rear {
 
 		}
 
 	}
+
+}
+
+
+.print_wrapper {
+	position: absolute;
+	top: 0;
+	background: #fff;
+	display: none !important;
+	left: -99999px;
+}
+
+
+.size-label {
+	width: 175pt;
+	height: 82pt;
+	padding: 12pt 8pt; // 12pt 4pt works
+
+	&.page {
+		font-family: $font-headers;
+		background: #fff;
+		overflow: hidden;
+	}
+
+	& * {
+		overflow: hidden;
+	}
+
+	.label-inner-wrapper {
+		width: 100%;
+		height: 100%;
+		display:table;
+		//border: 1px solid black;
+	}
+
+	p {
+		display: table;
+		font-weight: 600;
+		line-height: 1.3;
+		margin: 0;
+
+		span {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		span.castingLabel {
+			text-transform: uppercase;
+			font-size: 10px;
+			font-weight: 500;
+			padding-right: 5px;
+			line-height: 1;
+			padding-top: 2px;
+		}
+
+		span.castingCode {
+			font-weight: bold;
+		}
+
+		&.details {
+			font-size: 8px;
+		}
+
+		&.reg-code {
+			font-size: 10px;
+			letter-spacing: 0.5px;
+		}
+	}
+
+	.tin-size {
+		height: 100%;
+		//border-right: 2px dashed blue;
+	}
+
+	.registration-page {
+		height: 100%;
+		width: 100%;
+
+		p {
+			font-size: 11px;
+			text-align: center;
+			margin: 0 auto;
+			&.border {
+				border: 2px solid black !important;
+				padding: 4px;
+				width: 75%;
+				font-size: 14px;
+			}
+		}
+
+
+	}
+
+	.align-middle {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
 
 }
