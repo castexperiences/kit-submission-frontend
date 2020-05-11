@@ -1173,10 +1173,10 @@ MIT
 ngx-barcode
 MIT
 
-ngx-window-token
+ngx-clipboard
 MIT
 
-ngx-clipboard
+ngx-window-token
 MIT
 
 ngx-dropzone
