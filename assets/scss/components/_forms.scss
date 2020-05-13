@@ -203,6 +203,13 @@
 	font-size: .875rem;
 }
 
+// Input type[number]
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
 
 // Portal Styling
 // Form Blocker - Used to block a form, row or column
@@ -256,7 +263,6 @@
 .blurry-text {
 	filter: blur(2px);
 }
-
 .shimmer {
 	color:white;
 	background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
@@ -270,7 +276,6 @@
 	-webkit-background-size: 4rem 100%; /*50px*/
 
 }
-
 @-webkit-keyframes shimmer {
 	0% {
 		background-position: -4rem top; /*50px*/

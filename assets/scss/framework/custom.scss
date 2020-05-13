@@ -33,34 +33,6 @@ a {
     z-index: 1060;
 }
 
-/* TOASTR BUGFIX */
-#toast-container > div {
-    opacity: 1;
-}
-
-.toast {
-    font-size: initial !important;
-    border: initial !important;
-    backdrop-filter: blur(0) !important;
-}
-
-.toast-success {
-    background-color: $success !important;
-}
-
-.toast-error {
-    background-color: $danger !important;
-}
-
-.toast-info {
-    background-color: $info !important;
-}
-
-.toast-warning {
-    background-color: $warning !important;
-}
-
-/* END TOASTR BUGFIX */
 
 // Kit Selection Only
 section.kit-selection {

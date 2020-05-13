@@ -11,6 +11,9 @@
   .modal-header {
     border-bottom: 1px solid #D6DFE6;
     padding: 1rem 1rem 0.8rem;
+    font-family: $headings-font-family;
+    font-weight: 500;
+
     .modal-title {
       font-weight: 600;
       @include font-size(18);

@@ -1,0 +1,54 @@
+.toast-container {
+
+	& > div {
+		opacity: 1;
+	}
+
+	.toast {
+		box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1);
+		background-size: 15px;
+		background-position: 20px center;
+		font-size: initial !important;
+		border: initial !important;
+		backdrop-filter: blur(0) !important;
+		background-color: theme-color-level('secondary', -2);
+
+		&:hover  {
+			box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1);
+			background-color: theme-color-level('secondary', -4);
+		}
+
+		.toast-title {
+			font-family: $headings-font-family;
+			font-weight: 500;
+		}
+
+		&-success {
+			background-color: theme-color('success') !important;
+			&:hover {
+				background-color: theme-color-level('success', -2) !important;
+			}
+		}
+		&-error {
+			background-color: theme-color('danger') !important;
+			&:hover {
+				background-color: theme-color-level('danger', -2) !important;
+			}
+		}
+		&-info {
+			background-color: theme-color('info') !important;
+			&:hover {
+				background-color: theme-color-level('info', -2) !important;
+			}
+		}
+		&-warning {
+			background-color: theme-color('warning') !important;
+			&:hover {
+				background-color: theme-color-level('warning', -2) !important;
+			}
+		}
+
+
+	}
+
+}
