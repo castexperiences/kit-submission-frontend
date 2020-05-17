@@ -133,7 +133,12 @@
 	@return $mm * 2.834645669pt;
 }
 
-
+.pdfLabel {
+	// To hide on production
+	position: absolute;
+	z-index: -99999;
+	left: -999999px;
+}
 .size-label {
 	//width: 175pt;
 	//height: 82pt;
@@ -193,6 +198,13 @@
 			font-size: 10px;
 			letter-spacing: 0.5px;
 		}
+	}
+
+	.castingCodeBox {
+		width: 100%;
+		height: toPt(8);
+		border: 2px solid black;
+		display: inline-block;
 	}
 
 	.tin-size {
