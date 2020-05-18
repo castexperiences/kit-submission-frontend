@@ -124,21 +124,21 @@
 .print_wrapper {
 	position: absolute;
 	top: 0;
-	background: #fff;
 	display: none !important;
 	left: -99999px;
+	background: #fff;
 }
-
-@function toPt($mm) {
-	@return $mm * 2.834645669pt;
-}
-
 .pdfLabel {
 	// To hide on production
 	position: absolute;
 	z-index: -99999;
 	left: -999999px;
 }
+
+@function toPt($mm) {
+	@return $mm * 2.834645669pt;
+}
+
 .size-label {
 	//width: 175pt;
 	//height: 82pt;
@@ -209,7 +209,6 @@
 
 	.tin-size {
 		height: 100%;
-		//border-right: 2px dashed blue;
 	}
 
 	.registration-page {
@@ -237,5 +236,83 @@
 		vertical-align: middle;
 	}
 
+	p.tin-label-reg-code {
+		width: 100%;
+		border: 2px solid black;
+		text-align: center;
+		span.label {
+			display: block;
+			font-size: 10px;
+		}
+		span.code {
+			display: block;
+			font-size: 14px;
+			font-family: $font-family-sans-serif;
+		}
+	}
+	//.no-code-section {
+	//	display: table;
+	//	& > div,
+	//	& span {
+	//		display:table-cell;
+	//		vertical-align: middle;
+	//		font-family: $font-family-sans-serif;
+	//		font-weight: bold;
+	//	}
+	//	span.label {
+	//		font-size: 10px;
+	//	}
+	//	span.code {
+	//		border: 2px solid
+	//	}
+	//}
 
+	table {
+		table-layout: auto;
+		tbody {
+			tr {
+				white-space: nowrap;
+			}
+			td {
+				padding: 0;
+				font-family: $font-family-sans-serif;
+				font-size: 10px;
+				line-height: 10px;
+				font-weight: bold;
+				color: black;
+				&:not(:first-child) {
+					padding-left: toPt(1);
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.code-row {
+		margin-top: toPt(0.5);
+		width: 100%;
+		td {
+			width: auto;
+			padding-right: 5px;
+			&.code-input {
+				border: 2px solid black;
+				width: 65%;
+				color: black !important;
+				padding: 5px 10px !important;
+				font-size: 12px;
+				&.empty {
+					color: rgba(0,0,0,0.4) !important;
+					font-size: 10px;
+				}
+			}
+
+		}
+	}
+
+}
+
+
+#printPdf { position: fixed; top: 0px; left: 0px; display: block;
+	padding: 0px;border: 0px;margin: 0px;
+	visibility: hidden; opacity: 0;
 }
