@@ -8,6 +8,9 @@
 // Cards
 .card {
   height: 100%;
+  &.transparent {
+    background: none;
+  }
   &-body {
     background-color: #fff;
     border: 1px solid #EAEAEA;

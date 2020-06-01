@@ -1,5 +1,10 @@
 // General Styles
 // ---------------
+body.kit-submission,
+body.event-submission {
+	background-color: #FFFFFF !important;
+}
+
 #submissions-form-page {
 	form {
 		height: 100%;

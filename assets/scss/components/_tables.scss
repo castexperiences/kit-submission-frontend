@@ -1,25 +1,51 @@
+.form-container {
+	max-width: 1300px;
+}
+
 table.table {
-	$font-size: 15;
+	$font-size: 13;
 
-	thead tr th,
-	tbody tr th {
-		padding: 1rem 0 0.7rem;
-		text-transform: none;
-		@include font-size($font-size);
-		font-weight: 600;
-		min-width: 90px;
-	}
-	thead tr th {
-		border-top: none;
-		border-bottom: 1px solid #979797;
+	// General Styles
+	thead,
+	tbody {
+		tr:not(.spacer) {
+			background-color: #fff;
+
+			th {
+				padding: 1rem 0;
+				text-transform: none;
+				@include font-size($font-size);
+				font-weight: 600;
+				min-width: 90px;
+			}
+
+		}
 	}
 
-	thead tr.search-head-top th {
-		border:none;
-		padding-bottom: 0;
-	}
-	thead tr.search-head th {
-		padding-top: 0;
+	// Table HEAD
+	thead {
+		padding: 20px;
+
+		tr {
+			background-color: #fff;
+			padding: 15px 0 !important;
+
+			&.search-head-top {
+				border: none;
+				padding-bottom: 0;
+
+				th {
+					padding-top: 0;
+				}
+			}
+
+			th {
+				font-family: $font-headers;
+				font-weight: 500 !important;
+				@include font-size(12, true);
+				color: $dark;
+			}
+		}
 	}
 
 	@mixin status-style($status, $background: #fff, $color: #000) {
@@ -31,20 +57,32 @@ table.table {
 		}
 	}
 
+	// Table BODY
 	tbody {
 		tr {
+			transition: all .3s ease;
+			background-color: #fff;
+
+			&:hover {
+				background-color: darken(#fff, 3%);
+			}
+
 			td {
-				padding-left: 0;
+				padding: 5px;
 				vertical-align: middle;
 				@include font-size($font-size);
+
 				a {
 					text-decoration: underline;
 					color: inherit;
+
 					&:hover {
 						color: theme-color('primary');
 					}
+
 					&[target="_blank"] {
 						text-decoration: none;
+
 						&::after {
 							@include fa-icon;
 							@extend .fas;
@@ -57,6 +95,11 @@ table.table {
 						}
 					}
 				}
+
+				span.muted {
+					opacity: 0.5;
+				}
+
 			}
 
 
@@ -68,12 +111,15 @@ table.table {
 						font-weight: 500;
 						border-radius: 2px;
 						@include font-size(14);
+						white-space: nowrap;
 					}
 				}
 			}
+
 			&.status-pending {
 				opacity: 0.5;
 			}
+
 			@include status-style('customer-submitted', lighten(#32b6df, 40%), darken(#32b6df, 5%));
 			@include status-style('awaiting-batching', lighten(#32b6df, 40%), darken(#32b6df, 5%));
 			@include status-style('partner-batch-created', lighten(#32b6df, 40%), darken(#32b6df, 5%));
@@ -81,17 +127,16 @@ table.table {
 			@include status-style('submission-received', lighten(#70D820, 40%), darken(#70D820, 10%));
 			@include status-style('updating', lighten(#f02210, 40%), darken(#f02210, 10%));
 			@include status-style('pending', lighten(#e98800, 40%), darken(#e98800, 10%));
-
+			@include status-style('manufacturer-batch-created', lighten(#e98800, 40%), darken(#e98800, 10%));
+			@include status-style('in-production', lighten(#70D820, 40%), darken(#70D820, 10%));
 		}
-
-
-
-
 	}
 
-
-	.selected {
-		background-color: $gray-300;
+	// Selected Text
+	p.selected-text {
+		color: theme-color-level('dark', -4);
+		@include font-size(14);
+		margin-bottom: 0;
 	}
 
 	&.kit-submissions {
@@ -100,4 +145,123 @@ table.table {
 		}
 	}
 
+	// Styling for list view tables
+	&.list-view {
+
+		border-collapse: separate;
+		border-spacing: 0 12px;
+
+		thead,
+		tbody {
+			tr:not(.spacer) {
+				background-color: #fff;
+				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+				border-radius: 3px;
+
+				th {
+					padding: 1rem 0;
+					text-transform: none;
+					@include font-size($font-size);
+					font-weight: 600;
+					min-width: 90px;
+				}
+
+			}
+		}
+
+		thead {
+			padding: 20px;
+			position: sticky;
+			top: 0;
+
+			tr {
+				background-color: #fff;
+				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+				border-radius: 3px;
+				padding: 15px 0 !important;
+
+				&.search-head-top {
+					border: none;
+					padding-bottom: 0;
+
+					th {
+						padding-top: 0;
+					}
+				}
+
+				th {
+					font-family: $font-headers;
+					font-weight: 500 !important;
+					@include font-size(12, true);
+					color: $dark;
+					border-top: none;
+				}
+			}
+		}
+		tbody {
+			tr:not(.spacer) {
+				transition: all .3s ease;
+				background-color: #fff;
+
+				&:hover {
+					background-color: darken(#fff, 3%);
+				}
+
+				&.selected {
+					box-shadow:inset 0px 0px 0px 2px $navy;
+				}
+
+				td {
+					height: 75px;
+					padding: 5px;
+					vertical-align: middle;
+					@include font-size($font-size);
+					line-height: 1.2;
+					border-top: none;
+
+					a {
+						text-decoration: underline;
+						color: inherit;
+
+						&:hover {
+							color: theme-color('primary');
+						}
+
+						&[target="_blank"] {
+							text-decoration: none;
+
+							&::after {
+								@include fa-icon;
+								@extend .fas;
+								content: fa-content($fa-var-external-link-alt);
+								text-decoration: none;
+								font-size: 12px;
+								vertical-align: middle;
+								padding-left: 6px;
+								margin-bottom: 2px;
+							}
+						}
+					}
+
+					span.muted {
+						opacity: 0.5;
+					}
+
+				}
+
+			}
+			tr.spacer {
+				background-color: transparent !important;
+				border: none !important;
+
+				td {
+					padding: 0;
+					border: none;
+					vertical-align: middle;
+					text-align: center;
+				}
+			}
+		}
+
+	}
 }
