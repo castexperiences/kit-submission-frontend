@@ -124,6 +124,7 @@ table.table {
 			@include status-style('customer-submitted', lighten(#32b6df, 40%), darken(#32b6df, 5%));
 			@include status-style('awaiting-batching', lighten(#32b6df, 40%), darken(#32b6df, 5%));
 			@include status-style('partner-batch-in-transit', lighten(#52b68f, 40%), darken(#52b68f, 5%));
+			@include status-style('partner-batch-created', lighten(#CD5C5C, 35%), darken(#CD5C5C, 5%));
 			@include status-style('submission-received', lighten(#70D820, 40%), darken(#70D820, 10%));
 			@include status-style('production-complete', lighten(#20B2AA, 40%), darken(#20B2AA, 10%));
 			@include status-style('completed-batch-created', lighten(#651fff, 40%), darken(#651fff, 10%));
