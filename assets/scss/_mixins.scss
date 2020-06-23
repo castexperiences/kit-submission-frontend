@@ -41,3 +41,14 @@ $browser-context: (16 * strip-unit($font-size-base)); // Default
   font-family: 'Font Awesome 5 Free';
   font-weight: 900 !important;
 }
+
+// Status Colours
+@mixin status-style($status, $background: #fff, $color: #000) {
+  &.status-#{$status} {
+    td.status > span,
+    & > span {
+      color: $color;
+      background: $background;
+    }
+  }
+}

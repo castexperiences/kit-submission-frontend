@@ -1,34 +1,187 @@
+@mixin h1-style( $main-size: null, $md-size: null, $sm-size: null ) {
+  @if ($main-size) {
+    @include font-size($main-size);
+  } @else {
+    @include font-size(42);
+  }
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1.2px;
+
+  @if ($md-size) {
+    @include media-breakpoint-up(md) {
+      @include font-size($md-size);
+    }
+  }
+  @if ($sm-size) {
+    @include media-breakpoint-down(sm) {
+      @include font-size($sm-size);
+    }
+  }
+}
+@mixin h2-style( $main-size: null, $md-size: null, $sm-size: null ) {
+  @if ($main-size) {
+    @include font-size($main-size);
+  } @else {
+    @include font-size(35);
+  }
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+
+  @if ($md-size) {
+    @include media-breakpoint-up(md) {
+      @include font-size($md-size);
+    }
+  }
+  @if ($sm-size) {
+    @include media-breakpoint-down(sm) {
+      @include font-size($sm-size);
+    }
+  }
+}
+@mixin h3-style( $main-size: null, $md-size: null, $sm-size: null ) {
+  @if ($main-size) {
+    @include font-size($main-size);
+  } @else {
+    @include font-size(30);
+  }
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.85px;
+
+  @if ($md-size) {
+    @include media-breakpoint-up(md) {
+      @include font-size($md-size);
+    }
+  }
+  @if ($sm-size) {
+    @include media-breakpoint-down(sm) {
+      @include font-size($sm-size);
+    }
+  }
+}
+@mixin h4-style( $main-size: null, $md-size: null, $sm-size: null ) {
+  @if ($main-size) {
+    @include font-size($main-size);
+  } @else {
+    @include font-size(24);
+  }
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.75px;
+
+  @if ($md-size) {
+    @include media-breakpoint-up(md) {
+      @include font-size($md-size);
+    }
+  }
+  @if ($sm-size) {
+    @include media-breakpoint-down(sm) {
+      @include font-size($sm-size);
+    }
+  }
+}
+@mixin h5-style( $main-size: null, $md-size: null, $sm-size: null ) {
+  @if ($main-size) {
+    @include font-size($main-size);
+  } @else {
+    @include font-size(18);
+  }
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+
+  @if ($md-size) {
+    @include media-breakpoint-up(md) {
+      @include font-size($md-size);
+    }
+  }
+  @if ($sm-size) {
+    @include media-breakpoint-down(sm) {
+      @include font-size($sm-size);
+    }
+  }
+}
+@mixin h6-style( $main-size: null, $md-size: null, $sm-size: null ) {
+  @if ($main-size) {
+    @include font-size($main-size);
+  } @else {
+    @include font-size(16);
+  }
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.4px;
+
+  @if ($md-size) {
+    @include media-breakpoint-up(md) {
+      @include font-size($md-size);
+    }
+  }
+  @if ($sm-size) {
+    @include media-breakpoint-down(sm) {
+      @include font-size($sm-size);
+    }
+  }
+}
+@mixin p-style($size: null) {
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  color: theme-color-level(dark, -2);
+  @if ($size) {
+    @include font-size($size);
+  } @else {
+    font-size: 1em;
+  }
+  a {
+    color: theme-color(primary);
+  }
+}
+
+
+// Reset Styles
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 500;
 }
 
 h1 {
-
+  @include h1-style();
 }
 
 h2 {
-
+  @include h2-style();
 }
 
 h3 {
-  letter-spacing: 0.5px;
+  @include h3-style();
 }
 
 h4 {
+  @include h4-style();
+}
 
+h5 {
+  @include h5-style();
+  //font-weight: 400;
+}
+
+h6 {
+  @include h6-style();
+  //font-weight: 400;
 }
 
 p {
-  font-weight: 400;
-  font-size: rem-calc(16);
+  @include p-style();
 }
 
-
-
+p.lead {
+  @include p-style(21);
+}
 p.header-lead {
   font-size: rem-calc(18);
   font-weight: bold;
-  color: $brand-grey;
+  color: theme-color-level(dark, -2);
   margin-bottom: 0;
 }
 

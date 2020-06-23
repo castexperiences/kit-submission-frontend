@@ -18,6 +18,7 @@ $fa-font-path: "./icons/font-awesome/webfonts";
 
 // Custom Mixins
 @import 'mixins';
+@import 'components/typography';
 
 // Alignment Classes
 .tl {text-align:left !important;}
@@ -26,7 +27,6 @@ $fa-font-path: "./icons/font-awesome/webfonts";
 
 // Component Specific
 @import 'components/layout';
-@import 'components/typography';
 @import 'components/forms';
 @import 'components/tables';
 @import 'components/buttons';
@@ -36,6 +36,7 @@ $fa-font-path: "./icons/font-awesome/webfonts";
 @import 'components/callout';
 @import 'components/toastr';
 @import 'components/pdf';
+@import 'components/status';
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
 

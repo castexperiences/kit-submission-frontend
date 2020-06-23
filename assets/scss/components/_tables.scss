@@ -20,6 +20,13 @@ table.table {
 			}
 
 		}
+		td.checkbox,
+		th.checkbox {
+			text-align: center !important;
+			.checkbox-wrapper {
+				vertical-align: middle;
+			}
+		}
 	}
 
 	// Table HEAD
@@ -50,7 +57,8 @@ table.table {
 
 	@mixin status-style($status, $background: #fff, $color: #000) {
 		&.status-#{$status} {
-			td.status > span {
+			td.status > span,
+			span {
 				color: $color;
 				background: $background;
 			}
@@ -120,18 +128,6 @@ table.table {
 				opacity: 0.5;
 			}
 
-			@include status-style('pending', lighten(#e98800, 40%), darken(#e98800, 10%));
-			@include status-style('updating', lighten(#f02210, 40%), darken(#f02210, 10%));
-			@include status-style('customer-submitted', lighten(#32b6df, 40%), darken(#32b6df, 5%));
-			@include status-style('awaiting-batching', lighten(#32b6df, 40%), darken(#32b6df, 5%));
-			@include status-style('partner-batch-in-transit', lighten(#52b68f, 40%), darken(#52b68f, 5%));
-			@include status-style('partner-batch-created', lighten(#CD5C5C, 35%), darken(#CD5C5C, 5%));
-			@include status-style('submission-received', lighten(#70D820, 40%), darken(#70D820, 10%));
-			@include status-style('production-complete', lighten(#20B2AA, 40%), darken(#20B2AA, 10%));
-			@include status-style('completed-batch-created', lighten(#651fff, 40%), darken(#651fff, 10%));
-			@include status-style('manufacturer-batch-created', lighten(#e98800, 40%), darken(#e98800, 10%));
-			@include status-style('in-production', lighten(#70D820, 40%), darken(#70D820, 10%));
-			@include status-style('completed-batch-in-transit', lighten(#3b97d1, 40%), darken(#3b97d1, 10%));
 		}
 	}
 
@@ -430,7 +426,17 @@ table.table {
 		&.panel {
 
 		}
-
+		.progress {
+			.progress-bar {
+				min-width: 5% !important;
+				&.halfway {
+					background-color: $warning;
+				}
+				&.complete {
+					background-color: $success;
+				}
+			}
+		}
 		i {
 			transition: transform .3s ease;
 			@include font-size(10);
@@ -439,7 +445,8 @@ table.table {
 	}
 	.row-group.rush {
 		.tr {
-			box-shadow: inset 3px 0 0 0 $warning;
+			box-shadow: inset 4px 0 0 0 $warning;
+			background-color: theme-color-level(warning, -12);
 		}
 	}
 	.row-group.late {
@@ -455,7 +462,6 @@ table.table {
 			//
 		}
 	}
-
 	.table-row.expanded {
 		border-radius: 3px 3px 0 0;
 		z-index: 1;

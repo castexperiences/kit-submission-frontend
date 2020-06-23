@@ -14,25 +14,68 @@
   &-body {
     background-color: #fff;
     border: 1px solid #EAEAEA;
-    padding: rem-calc(30,50);
+    padding: rem-calc(30,30);
     @include media-breakpoint-down(sm) {
       padding: rem-calc(25, 20);
     }
 
-    .inner-section {
-      margin-bottom: rem-calc(30);
-    }
 
-    h5.card-title {
-      font-size: rem-calc(19);
-      font-weight: 700;
+    .card-title {
+      @include font-size(14);
     }
 
     ul.card-details {
       list-style-type: none;
       padding: 0;
-      margin: 0 0 1rem 0;
-      li {}
+      margin: 0;
+      li {
+        display: flex;
+        padding-bottom: 8px;
+
+        hr {
+          margin-left: 0;
+          max-width: 100px;
+          width: 35%;
+        }
+
+        span {
+          display: inline-block;
+          i {
+            vertical-align: middle;
+          }
+        }
+
+        span.label,
+        & > span:first-child {
+          @include p-style(14);
+          opacity: 0.7;
+          width: 40%;
+          max-width: 100px;
+          padding-right: 5px;
+        }
+
+        span.value,
+        & > span:not(:first-child) {
+          @include p-style(14);
+          flex-grow: 1;
+        }
+
+        span.sub-value {
+          display: block;
+          width: 100%;
+          line-height: 1;
+          @include font-size(13);
+          opacity: 0.7;
+        }
+
+        span.yes {
+          color: theme-color(success);
+        }
+        span.no {
+          color: theme-color(danger);
+        }
+
+      }
     }
 
   }

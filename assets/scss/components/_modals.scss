@@ -9,16 +9,29 @@
   backdrop-filter: blur(4px);
 
   .modal-header {
-    border-bottom: 1px solid #D6DFE6;
-    padding: 1rem 1rem 0.8rem;
+    background-image: linear-gradient(180deg, #295070 0%, #295070 0%, #315E84 100%);
+    padding: 30px;
     font-family: $headings-font-family;
     font-weight: 500;
+    border-radius: 8px 8px 0 0;
 
     .modal-title {
-      font-weight: 600;
-      @include font-size(18);
-      color: $dark;
+      text-align: left;
+      color: #fff;
     }
+
+    .status {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+
+  }
+
+  .modal-body {
+
+
   }
 
 }
