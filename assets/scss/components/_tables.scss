@@ -278,7 +278,20 @@ table.table {
 			}
 		}
 
+		tr:not(.spacer) td:first-child,
+		tr:not(.spacer) th:first-child {
+			border-radius: 5px 0 0 5px;
+			padding-left: 15px;
+		}
+
+		tr:not(.spacer) td:last-child,
+		tr:not(.spacer) th:last-child {
+			border-radius: 0 5px 5px 0;
+			padding-right: 15px;
+		}
+
 	}
+
 }
 
 
