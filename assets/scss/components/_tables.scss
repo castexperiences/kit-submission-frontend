@@ -469,6 +469,13 @@ table.table {
 		}
 	}
 
+	.row-group.on-hold {
+		.tr {
+			box-shadow: inset 0 0 0 2px $gray-600;
+			background: theme-color-level(dark, -11);
+		}
+	}
+
 	// Table Body
 	.table-row.selected {
 		&.selected {
