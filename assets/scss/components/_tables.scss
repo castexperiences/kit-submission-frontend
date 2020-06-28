@@ -278,6 +278,14 @@ table.table {
 			}
 		}
 
+		td.status,
+		th.status,
+		td.shrink,
+		th.shrink {
+			width:0.1%;
+			white-space: nowrap;
+		}
+
 		tr:not(.spacer) td:first-child,
 		tr:not(.spacer) th:first-child {
 			border-radius: 5px 0 0 5px;
