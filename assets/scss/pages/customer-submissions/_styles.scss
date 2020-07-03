@@ -3,6 +3,11 @@
 body.kit-submission,
 body.event-submission {
 	background-color: #FFFFFF !important;
+
+	&.confirmation {
+		background-color: #F0F3F5 !important;
+	}
+
 }
 
 #submissions-form-page {
@@ -538,6 +543,24 @@ body.event-submission {
 
 .text-warning {
 	color: $warning;
+}
+
+
+// Thank you page
+body.kit-submission.confirmation,
+body.event-submission.confirmation {
+	.making-container {
+		@include media-breakpoint-down(sm) {
+			height: 350px;
+			margin-bottom: $grid-gutter-width;
+		}
+	}
+	.inline-code > span {
+		@include media-breakpoint-down(sm) {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
 }
 
 // Type Specific Overrides
