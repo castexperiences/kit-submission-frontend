@@ -1,6 +1,7 @@
+$debug: FALSE;
+$guides: FALSE;
+
 .pdf_wrapper {
-	$debug: FALSE;
-	$guides: FALSE;
 
 	top: 0;
 	width: 210mm;
@@ -122,21 +123,21 @@
 
 
 .print_wrapper {
-	position: absolute;
-	top: 0;
-	display: none !important;
-	left: -99999px;
-	background: #fff;
+	@if ($debug != TRUE ) {
+		position: absolute;
+		top: 0;
+		display: none !important;
+		left: -99999px;
+		background: #fff;
+	}
 }
 .pdfLabel {
 	// To hide on production
-	position: absolute;
-	z-index: -99999;
-	left: -999999px;
-}
-
-@function toPt($mm) {
-	@return $mm * 2.834645669pt;
+	@if ($debug != TRUE ) {
+		position: absolute;
+		z-index: -99999;
+		left: -999999px;
+	}
 }
 
 .size-label {
@@ -146,6 +147,29 @@
 	width: toPt(62);
 	height: toPt(29);
 	padding: toPt(3) toPt(2);
+
+	&.manufacturing {
+		height: toPt(100);
+
+		.footer {
+			@include font-size(8, true);
+			text-align: center;
+			width: 100%;
+			padding: 0 !important;
+			color: $gray-700;
+			font-family: $font-family-sans-serif;
+		}
+
+		.barcode {
+			max-height: 50px;
+			text-align: center;
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+	}
 
 	&.page {
 		font-family: $font-headers;
@@ -315,4 +339,38 @@
 #printPdf { position: fixed; top: 0px; left: 0px; display: block;
 	padding: 0px;border: 0px;margin: 0px;
 	visibility: hidden; opacity: 0;
+}
+
+
+.label-jobs {
+	max-width: 100%;
+	margin: 0 auto;
+	.action {
+		padding: 3px 3px 3px 0;
+		&.off {
+			display: none !important;
+		}
+		&.off svg {
+			opacity: 0 !important;
+		}
+	}
+	.action > div {
+		border: 1px solid #000;
+	}
+	span {
+		font-family: $font-family-sans-serif;
+		@include font-size(10);
+		text-align: center;
+		text-transform: uppercase;
+		display: block;
+		font-weight: bold;
+		padding-bottom: 16px;
+	}
+	svg {
+		width: 50%;
+		height: 50%;
+		display: block;
+		margin: 0 auto;
+		padding-bottom: 3px;
+	}
 }

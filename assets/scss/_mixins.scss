@@ -52,3 +52,8 @@ $browser-context: (16 * strip-unit($font-size-base)); // Default
     }
   }
 }
+
+// mm to pt unit
+@function toPt($mm) {
+  @return $mm * 2.834645669pt;
+}

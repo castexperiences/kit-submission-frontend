@@ -20,9 +20,11 @@ table.table {
 			}
 
 		}
+
 		td.checkbox,
 		th.checkbox {
 			text-align: center !important;
+
 			.checkbox-wrapper {
 				vertical-align: middle;
 			}
@@ -282,7 +284,7 @@ table.table {
 		th.status,
 		td.shrink,
 		th.shrink {
-			width:0.1%;
+			width: 0.1%;
 			white-space: nowrap;
 		}
 
@@ -309,6 +311,7 @@ table.table {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
+
 .flex-table {
 	@include media-breakpoint-up(md) {
 		width: 100%;
@@ -426,6 +429,7 @@ table.table {
 					min-width: 100px;
 				}
 			}
+
 			.fg-3 {
 				flex-grow: 3;
 				@include media-breakpoint-down(sm) {
@@ -447,29 +451,35 @@ table.table {
 		&.panel {
 
 		}
+
 		.progress {
 			.progress-bar {
 				min-width: 5% !important;
+
 				&.halfway {
 					background-color: $warning;
 				}
+
 				&.complete {
 					background-color: $success;
 				}
 			}
 		}
+
 		i {
 			transition: transform .3s ease;
 			@include font-size(10);
 			vertical-align: middle;
 		}
 	}
+
 	.row-group.rush {
 		.tr {
 			box-shadow: inset 4px 0 0 0 $warning;
 			background-color: theme-color-level(warning, -12);
 		}
 	}
+
 	.row-group.late {
 		.tr {
 			box-shadow: inset 0 0 0 2px $danger;
@@ -490,6 +500,7 @@ table.table {
 			//
 		}
 	}
+
 	.table-row.expanded {
 		border-radius: 3px 3px 0 0;
 		z-index: 1;
@@ -539,9 +550,11 @@ table.table {
 				color: $dark;
 				font-weight: 500;
 			}
+
 			.description {
 				user-select: none;
 				text-align: center;
+
 				p {
 					font-family: $font-family-sans-serif;
 					@include font-size(12);
@@ -573,11 +586,77 @@ table.table {
 		}
 
 	}
+
 	.table-row.expanded + .panel {
 		height: 250px;
 		line-height: inherit;
 		padding: 30px 20px;
 	}
 
+
+}
+
+
+/*
+** Manufacturing Table
+ */
+// Header Table
+table.logoTable {
+	th {
+		@include font-size(14);
+		font-weight: 500;
+	}
+}
+
+// Job Details
+table.job_details {
+	$font-size: 11;
+
+	// Label width is 62mm
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 100%;
+
+	table, th, td {
+		border: 1px solid black;
+	}
+
+	tr {
+		vertical-align: middle;
+		white-space: normal !important;
+
+		// First column style
+		& > td:first-child,
+		& > th:first-child {
+			text-transform: uppercase !important;
+			text-align: right;
+		}
+
+		// Notes row
+		&.notes {
+			td:not(:first-child) {
+				@include font-size(10, true);
+				line-height: 1.2;
+				word-wrap: break-word !important;
+			}
+		}
+
+		// Black background
+		&.invert {
+			th:nth-child(2), td:nth-child(2) {
+				background-color: #000;
+				color: #fff !important;
+			}
+		}
+
+		th, td {
+			padding: 0.4em 0.4em !important;
+			text-transform: none;
+			@include font-size($font-size, true);
+			font-weight: 600;
+			word-wrap: break-word !important;
+		}
+
+	}
 
 }
