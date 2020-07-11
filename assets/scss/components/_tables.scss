@@ -422,6 +422,14 @@ table.table {
 				color: $text-muted;
 			}
 
+			&.status-pill span {
+				white-space: pre-wrap;
+				line-height: 1;
+				text-align: center;
+				font-weight: normal;
+				@include font-size(13)
+			}
+
 			// Flex grows
 			.fg-2 {
 				flex-grow: 2;
