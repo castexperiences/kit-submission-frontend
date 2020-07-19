@@ -304,6 +304,17 @@ table.table {
 
 }
 
+// Table button toolbar
+.btn-toolbar {
+	display: inline-block;
+
+	.btn {
+		width: 35px;
+		height: 35px;
+		line-height: 1;
+		padding: 5px;
+	}
+}
 
 .flex-table-wrapper {
 	overflow-x: scroll;
@@ -347,11 +358,12 @@ table.table {
 	// Table rows (header and body)
 	.table-header {
 		box-shadow: 0 2px 6px 0 rgba(#000, 0.08);
+		background: #fff !important;
 	}
 
 	.table-header,
 	.table-row {
-		background: #fff;
+		background: none;
 		border: none;
 		border-radius: 3px;
 		@include font-size(12);
@@ -374,7 +386,6 @@ table.table {
 	}
 
 	.table-row {
-		background-color: #fff;
 		font-family: $font-family-sans-serif;
 		@include font-size(13);
 
@@ -431,14 +442,14 @@ table.table {
 			}
 
 			// Flex grows
-			.fg-2 {
+			&.fg-2 {
 				flex-grow: 2;
 				@include media-breakpoint-down(sm) {
 					min-width: 100px;
 				}
 			}
 
-			.fg-3 {
+			&.fg-3 {
 				flex-grow: 3;
 				@include media-breakpoint-down(sm) {
 					min-width: 150px;
@@ -482,23 +493,26 @@ table.table {
 	}
 
 	.row-group.rush {
-		.tr {
-			box-shadow: inset 4px 0 0 0 $warning;
-			background-color: theme-color-level(warning, -12);
+		box-shadow: inset 4px 0 0 0 $warning !important;
+		background-color: theme-color-level(warning, -12) !important;
+		.tr.panel-open + .panel {
+			border-top: 1px solid $warning;
 		}
 	}
 
 	.row-group.late {
-		.tr {
-			box-shadow: inset 0 0 0 2px $danger;
-			background: theme-color-level(danger, -12);
+		box-shadow: inset 0 0 0 2px $danger !important;
+		background: theme-color-level(danger, -12) !important;
+		.tr.panel-open + .panel {
+			border-top: 1px solid $danger;
 		}
 	}
 
 	.row-group.on-hold {
-		.tr {
-			box-shadow: inset 0 0 0 2px $gray-600;
-			background: theme-color-level(dark, -11);
+		box-shadow: inset 0 0 0 2px $gray-600 !important;
+		background: theme-color-level(dark, -11) !important;
+		.tr.panel-open + .panel {
+			border-top: 1px solid $gray-600;
 		}
 	}
 
