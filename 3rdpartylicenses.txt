@@ -306,13 +306,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ngx-dropzone
 MIT
 
+ngx-csv
+MIT
+
 jsbarcode
 MIT
 
 ngx-barcode
-MIT
-
-ngx-csv
 MIT
 
 @angular/common

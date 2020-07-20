@@ -495,7 +495,7 @@ table.table {
 	.row-group.rush {
 		box-shadow: inset 4px 0 0 0 $warning !important;
 		background-color: theme-color-level(warning, -12) !important;
-		.tr.panel-open + .panel {
+		.tr.panel-open.expanded + .panel {
 			border-top: 1px solid $warning;
 		}
 	}
@@ -503,7 +503,7 @@ table.table {
 	.row-group.late {
 		box-shadow: inset 0 0 0 2px $danger !important;
 		background: theme-color-level(danger, -12) !important;
-		.tr.panel-open + .panel {
+		.tr.panel-open.expanded + .panel {
 			border-top: 1px solid $danger;
 		}
 	}
@@ -511,7 +511,7 @@ table.table {
 	.row-group.on-hold {
 		box-shadow: inset 0 0 0 2px $gray-600 !important;
 		background: theme-color-level(dark, -11) !important;
-		.tr.panel-open + .panel {
+		.tr.panel-open.expanded + .panel {
 			border-top: 1px solid $gray-600;
 		}
 	}
