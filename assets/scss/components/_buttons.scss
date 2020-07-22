@@ -50,6 +50,42 @@
     }
   }
 
+  // Data Table - Outline Icon Buttons
+  &.icon-btn-outline {
+    transition: all .3s ease;
+    padding: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px !important;
+    background: none;
+    border: 1px solid #CDCDCD;
+    color: #5e6163;
+    @include font-size(12);
+    &:hover:not(:disabled):not([disabled]),
+    &:focus:not(:disabled):not([disabled]) {
+      border-color: darken(#CDCDCD, 10%);
+    }
+    &[disabled],
+    &:disabled {
+      background-color: #CDCDCD;
+      opacity: 0.5;
+    }
+
+    &.color-primary:not(:disabled),
+    &.color-primary:not([disabled]) {
+      color: theme-color(primary);
+      border-color: theme-color(primary);
+      transition: all .3s ease;
+      &:hover,
+      &:focus {
+        background-color: theme-color-level(primary, -8);
+        border-color: theme-color(primary);
+      }
+    }
+
+  }
+
+
 }
 
 .small-button {

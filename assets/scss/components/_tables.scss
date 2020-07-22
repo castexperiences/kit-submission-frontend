@@ -2,6 +2,7 @@
 	max-width: 1300px;
 }
 
+// General Table Styles
 table.table {
 	$font-size: 13;
 
@@ -411,7 +412,7 @@ table.table {
 
 }
 
-
+// Jobs Table (/jobs/list/)
 .jobs-table {
 	.tr:not(.panel) {
 		.th, .td {
@@ -495,6 +496,7 @@ table.table {
 	.row-group.rush {
 		box-shadow: inset 4px 0 0 0 $warning !important;
 		background-color: theme-color-level(warning, -12) !important;
+
 		.tr.panel-open.expanded + .panel {
 			border-top: 1px solid $warning;
 		}
@@ -503,6 +505,7 @@ table.table {
 	.row-group.late {
 		box-shadow: inset 0 0 0 2px $danger !important;
 		background: theme-color-level(danger, -12) !important;
+
 		.tr.panel-open.expanded + .panel {
 			border-top: 1px solid $danger;
 		}
@@ -511,6 +514,7 @@ table.table {
 	.row-group.on-hold {
 		box-shadow: inset 0 0 0 2px $gray-600 !important;
 		background: theme-color-level(dark, -11) !important;
+
 		.tr.panel-open.expanded + .panel {
 			border-top: 1px solid $gray-600;
 		}
@@ -677,6 +681,103 @@ table.job_details {
 			@include font-size($font-size, true);
 			font-weight: 600;
 			word-wrap: break-word !important;
+		}
+
+	}
+
+}
+
+// Data Table
+table.data-table {
+	$font-size-base: 13;
+
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 1rem;
+	background-color: #fff;
+
+	// Conditional padding
+	tr {
+		& > th:first-child,
+		& > td:first-child {
+			padding-left: 20px !important;
+		}
+
+		& > th:last-child,
+		& > td:last-child {
+			padding-right: 20px !important;
+		}
+	}
+
+	thead {
+
+		th {
+			padding: 20px 0;
+			vertical-align: bottom;
+			font-family: $headings-font-family;
+			font-weight: 500;
+			@include font-size(12);
+			@include media-breakpoint-down(md-down) {
+				padding: 20px 8px;
+			}
+		}
+
+	}
+
+	tbody {
+
+		// Alternative background colour
+		tr:nth-child(even) {
+			background-color: #F9F9F9;
+		}
+
+		// Background colour on hover
+		tr {
+			transition: background-color .3s ease;
+			&:hover {
+				background-color: darken(#F9F9F9, 3%);
+			}
+		}
+
+		// Body column styles
+		th, td {
+			@include font-size($font-size-base);
+			font-weight: normal;
+			padding: 8px 0;
+			@include media-breakpoint-down(md-down) {
+				padding: 8px !important;
+				min-width: 30px;
+			}
+		}
+
+		// Reveal buttons on hover
+		tr {
+			.hover {
+				transition: opacity .3s ease;
+				opacity: 0 !important;
+			}
+
+			&:hover {
+				.hover {
+					opacity: 1 !important;
+				}
+				.hover[disabled],
+				.hover:disabled {
+					opacity: 0.5 !important;
+					cursor: not-allowed;
+				}
+			}
+		}
+
+		// Responsive magic
+		@include media-breakpoint-down(sm) {
+			tr {
+				td, th {
+					&:not(.sm) {
+						min-width: 90px;
+					}
+				}
+			}
 		}
 
 	}
