@@ -9,6 +9,8 @@
 @include status-style('production-complete', lighten(#20B2AA, 40%), darken(#20B2AA, 10%));
 @include status-style('completed-batch-created', lighten(#651fff, 40%), darken(#651fff, 10%));
 @include status-style('manufacturer-batch-created', lighten(#e98800, 40%), darken(#e98800, 10%));
+@include status-style('manufacturer-batch-in-transit', lighten(#db801e, 40%), darken(#db801e, 10%));
+@include status-style('manufacturer-batch-received', lighten(#CD5C5C, 35%), darken(#CD5C5C, 5%));
 @include status-style('in-production', lighten(#32b6df, 40%), darken(#32b6df, 5%));
 @include status-style('with-outworker', lighten(#651fff, 40%), darken(#651fff, 10%));
 @include status-style('completed-batch-in-transit', lighten(#3b97d1, 40%), darken(#3b97d1, 10%));

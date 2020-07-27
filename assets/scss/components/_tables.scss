@@ -748,6 +748,11 @@ table.data-table {
 				padding: 8px !important;
 				min-width: 30px;
 			}
+
+			&.muted {
+				color: $text-muted;
+			}
+
 		}
 
 		// Reveal buttons on hover
