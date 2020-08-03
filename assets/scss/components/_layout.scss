@@ -32,6 +32,21 @@
         display: flex;
         padding-bottom: 8px;
 
+
+        // Editing a submission specific
+        button.hover {
+          opacity: 0;
+          margin-left: 6px;
+        }
+        &.editable {
+          &:hover {
+            button.hover {
+              opacity: 1;
+            }
+          }
+        }
+
+
         hr {
           margin-left: 0;
           max-width: 100px;
@@ -44,6 +59,7 @@
             vertical-align: middle;
           }
         }
+
 
         span.label,
         & > span:first-child {
