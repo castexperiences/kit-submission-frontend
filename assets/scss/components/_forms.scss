@@ -132,7 +132,7 @@
 	height: $md-checkbox-size !important;
 
 	&.checkbox-inline {
-		display: inline-block;
+		display: inline-flex; // changed from inline-block to vertically align on <table> rows
 	}
 
 	label {

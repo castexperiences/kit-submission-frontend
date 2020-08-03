@@ -18,7 +18,27 @@
     .modal-title {
       text-align: left;
       color: #fff;
+
+      a[target="_blank"] {
+        color: #fff;
+        text-decoration: none;
+        &::after {
+          @include fa-icon;
+          @extend .fas;
+          content: fa-content($fa-var-external-link-alt);
+          text-decoration: none;
+          font-size: 12px;
+          vertical-align: middle;
+          padding-left: 6px;
+          margin-bottom: 2px;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+
     }
+
 
     .status {
       @include media-breakpoint-down(sm) {
