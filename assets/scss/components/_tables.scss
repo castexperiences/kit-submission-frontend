@@ -493,6 +493,15 @@ table.table {
 		}
 	}
 
+	.row-group.rush {
+		box-shadow: inset 4px 0 0 0 $warning !important;
+		background-color: theme-color-level(warning, -12) !important;
+
+		.tr.panel-open.expanded + .panel {
+			border-top: 1px solid $warning;
+		}
+	}
+
 	.row-group.late {
 		box-shadow: inset 0 0 0 2px $danger !important;
 		background: theme-color-level(danger, -12) !important;
@@ -500,39 +509,6 @@ table.table {
 		.tr.panel-open.expanded + .panel {
 			border-top: 1px solid $danger;
 		}
-
-		.td.due-back {
-			span.muted {
-				font-weight: bold;
-				color: theme-color(danger) !important;
-			}
-		}
-
-	}
-
-	.row-group.rush {
-		box-shadow: inset 0 0 0 2px $warning !important; // left border is 4px 0 0 0
-		background-color: theme-color-level(warning, -12) !important;
-
-		.tr.panel-open.expanded + .panel {
-			border-top: 1px solid $warning;
-		}
-
-		.tr.panel-open {
-			position: relative;
-			&::before {
-				position: absolute;
-				content: 'RUSH ITEM';
-				top: 0;
-				left: 2%;
-				background-color: theme-color-level(warning, 1);
-				color: white;
-				padding: 1px 7px;
-				font-weight: bold;
-				border-radius: 0 0 3px 3px;
-			}
-		}
-
 	}
 
 	.row-group.on-hold {
