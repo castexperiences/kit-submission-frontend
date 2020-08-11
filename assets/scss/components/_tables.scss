@@ -147,6 +147,25 @@ table.table {
 		}
 	}
 
+	// Hover button style
+	tr {
+		.hover {
+			transition: opacity .3s ease;
+			opacity: 0 !important;
+		}
+
+		&:hover {
+			.hover {
+				opacity: 1 !important;
+			}
+			.hover[disabled],
+			.hover:disabled {
+				opacity: 0.5 !important;
+				cursor: not-allowed;
+			}
+		}
+	}
+
 	// Styling for list view tables
 	&.list-view {
 
