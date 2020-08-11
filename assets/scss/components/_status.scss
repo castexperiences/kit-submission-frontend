@@ -15,6 +15,7 @@
 @include status-style('with-outworker', lighten(#651fff, 40%), darken(#651fff, 10%));
 @include status-style('completed-batch-in-transit', lighten(#3b97d1, 40%), darken(#3b97d1, 10%));
 @include status-style('completed-batch-received', lighten(#70D820, 40%), darken(#70D820, 10%));
+@include status-style('sent-to-customer', lighten(#70D820, 40%), darken(#70D820, 10%));
 
 .status-pill {
 	span {
