@@ -38,6 +38,11 @@
           opacity: 0;
           margin-left: 6px;
         }
+        &:not(.editable) {
+          button {
+            display: none;
+          }
+        }
         &.editable {
           &:hover {
             button.hover {
