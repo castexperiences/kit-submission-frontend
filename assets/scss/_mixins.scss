@@ -42,6 +42,20 @@ $browser-context: (16 * strip-unit($font-size-base)); // Default
   font-weight: 900 !important;
 }
 
+@mixin fa($icon-var: null, $weight: 'solid') {
+  font-family: 'Font Awesome 5 Free', serif;
+  @include fa-icon();
+  @if ($icon-var) {
+    content: fa-content($icon-var);
+  }
+  @if ($weight == 'light') {
+    font-weight: 400 !important;
+  }
+  @if ($weight == 'solid') {
+    font-weight: 900 !important;
+  }
+}
+
 // Status Colours
 @mixin status-style($status, $background: #fff, $color: #000) {
   &.status-#{$status} {
