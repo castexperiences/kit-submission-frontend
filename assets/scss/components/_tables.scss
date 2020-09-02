@@ -780,6 +780,13 @@ table.data-table {
 			&:hover {
 				background-color: darken(#F9F9F9, 3%);
 			}
+
+			&.nowrap {
+				th, td {
+					white-space: nowrap;
+				}
+			}
+
 		}
 
 		// Body column styles
@@ -790,6 +797,10 @@ table.data-table {
 			@include media-breakpoint-down(md-down) {
 				padding: 8px !important;
 				min-width: 30px;
+			}
+
+			&.nowrap {
+				white-space: nowrap;
 			}
 
 			&.muted {
