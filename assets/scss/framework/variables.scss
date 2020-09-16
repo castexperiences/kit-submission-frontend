@@ -30,8 +30,8 @@ $topbar-navbrand-padding: 0 0 0 5px;
 
 $sidebar: $theme-light;
 $sidebar-alt: #e8eff0;
-$sidebar-text: #fff;
-$sidebar-icons: #fff;
+$sidebar-text: #3C3845;
+$sidebar-icons: #3C3845;
 $sidebar-text-dark: #212529;
 $sidebar-icons-dark: #4f5467;
 
@@ -180,7 +180,7 @@ $enable-print-styles: true !default;
 // Body
 // Settings for the  element.
 $main-body-bg: #FFFFFF !default;
-$body-bg: rgb(240, 243, 245); // formally F8F8F8
+$body-bg: #ffffff; // formally F8F8F8
 $body-color: #3C3845 !default;
 $grid-gutter-width: 20px !default;
 // Typography

@@ -6,6 +6,7 @@
 
 #main-wrapper {
   width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -15,9 +16,37 @@
   transition: 0.2s ease-in;
 }
 
+.page-wrapper > .mobile-header {
+  display: none;
+}
+
+@include media-breakpoint-down(md) {
+  .page-wrapper > .mobile-header {
+    display: block;
+    padding: 8px 10px;
+    background-color: #F7FAFC;
+    border-bottom: 1px solid #E1E1E1;
+
+    .header-items {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        padding: 8px 15px 5px 15px;
+        font-size: 20px;
+        margin-right: 8px;
+      }
+    }
+
+    img {
+      width: 80px;
+    }
+  }
+}
+
 .page-wrapper > .container-fluid {
   padding: 20px;
-  min-height: calc(100vh - 180px);
+  min-height: 100vh;
 }
 
 /*******************
@@ -84,7 +113,7 @@ $left-part-width: 260px;
   /*sidebar type*/
   &[data-sidebartype="full"] {
     .page-wrapper {
-      margin-left: $sidebar-width-full;
+      //margin-left: $sidebar-width-full;
     }
   }
   &[data-sidebartype="iconbar"] {
@@ -175,17 +204,17 @@ $left-part-width: 260px;
     &[data-sidebar-position="fixed"][data-sidebartype="full"],
     &[data-sidebar-position="fixed"][data-sidebartype="overlay"] {
       .topbar .top-navbar .navbar-collapse {
-        margin-left: $sidebar-width-full;
+        //margin-left: $sidebar-width-full;
       }
     }
     &[data-sidebar-position="fixed"][data-sidebartype="mini-sidebar"] {
       .topbar .top-navbar .navbar-collapse {
-        margin-left: $sidebar-width-mini;
+        //margin-left: $sidebar-width-mini;
       }
     }
     &[data-sidebar-position="fixed"][data-sidebartype="iconbar"] {
       .topbar .top-navbar .navbar-collapse {
-        margin-left: $sidebar-width-iconbar;
+        //margin-left: $sidebar-width-iconbar;
       }
     }
     /*Vertical with mini-sidebar*/
@@ -206,12 +235,12 @@ $left-part-width: 260px;
     /*Fixed sidebar with minisidebar*/
     &[data-sidebar-position="fixed"][data-sidebartype="mini-sidebar"] {
       .topbar .top-navbar .navbar-collapse {
-        margin-left: $sidebar-width-mini;
+        //margin-left: $sidebar-width-mini;
       }
     }
     &[data-sidebartype="mini-sidebar"] {
       .page-wrapper {
-        margin-left: $sidebar-width-mini;
+        //margin-left: $sidebar-width-mini;
       }
       .sidebar-nav {
         .hide-menu,
@@ -291,4 +320,9 @@ $left-part-width: 260px;
     width: 100%;
     margin-left: 0px;
   }
+}
+
+
+.ng-sidebar__content {
+  padding-left: 250px;
 }

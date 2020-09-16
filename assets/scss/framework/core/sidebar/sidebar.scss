@@ -1,8 +1,10 @@
 // Sidebar
-$sidebar-link-padding: 14px 15px;
-$sidebar-icon-size: 16px;
-$sidebar-first-level-padding: 0 0 0 0;
-$sidebar-first-level-link-padding: 10px 15px;
+$sidebar-padding-left: 30px;
+$sidebar-icon-width: 35px;
+$sidebar-link-padding: 14px 20px 14px #{$sidebar-padding-left};
+$sidebar-icon-size: 13px;
+$sidebar-first-level-padding: 0 0 22px 0;
+$sidebar-first-level-link-padding: 10px 20px 10px #{$sidebar-padding-left + $sidebar-icon-width};
 $sidebar-first-level-icon-size: 11px;
 
 /*******************
@@ -39,43 +41,47 @@ sidebar navigation
         color: $sidebar-text;
         padding: $sidebar-link-padding;
         display: flex;
+        font-size: 15px;
         white-space: nowrap;
         align-items: center;
-        line-height: 25px;
-        opacity: 0.6;
+        line-height: 1;
+        //opacity: 0.6;
         text-decoration: none;
         i {
           font-style: normal;
-          width: 38px;
-          line-height: 25px;
           font-size: $sidebar-icon-size;
           color: $sidebar-icons;
-          display: inline-block;
           text-align: center;
+          vertical-align: middle;
+          padding-right: 19px;
+          width: $sidebar-icon-width;
         }
         &.active,
         &:hover {
-          opacity: 1;
+          background-color: rgba(0,0,0,0.04);
         }
       }
       &.active > .sidebar-link {
         /*background: rgba(0, 0, 0, 0.04);*/
-        opacity: 1;
+        background-color: rgba(0,0,0,0.04);
       }
       /*******************
            First level
            ******************/
       .first-level {
         padding: $sidebar-first-level-padding;
+
         .sidebar-item.active .sidebar-link {
           opacity: 1;
           background-color: rgba(0,0,0,0.04);
+          color: $primary !important;
           //git add
         }
         .sidebar-item .sidebar-link {
           padding: $sidebar-first-level-link-padding;
           i {
             font-size: $sidebar-first-level-icon-size;
+            display: none;
           }
         }
       }
@@ -86,13 +92,13 @@ sidebar navigation
         *********************/
     &#sidebarnav {
       & > .sidebar-item {
-        padding-left: 3px;
-        padding-right: 3px;
+        //padding-left: 3px;
+        //padding-right: 3px;
       }
       & > .sidebar-item.active {
-        background-color: rgba(0,0,0,0.04);
+        //background-color: rgba(0,0,0,0.04);
         //border-left: 3px solid $primary;
-        box-shadow: inset 4px 0 0 $primary;
+        //box-shadow: inset 4px 0 0 $primary;
         & > .sidebar-link {
           font-weight: bold;
           color: $primary !important;
@@ -159,8 +165,9 @@ Down arrow
     -ms-transform-origin: top;
     -o-transform-origin: top;
     transform-origin: top;
-    top: 26px;
-    right: 15px;
+    top: 23px;
+    right: 25px;
+    opacity: 0.6;
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
@@ -181,16 +188,39 @@ Down arrow
 User Profile
 ******************/
 .user-profile {
-  padding: 15px;
+  padding: 0 15px 15px 15px;
+  .user-content {
+    display: flex;
+    align-items: center;
+    & > a {
+      transition: opacity .3s ease;
+      &:hover,
+      &:focus {
+        text-decoration: none !important;
+        opacity: 0.8;
+      }
+    }
+  }
+
   .user-content,
   .user-name,
   .user-email {
-    color: $theme-light;
+    color: $sidebar-text;
     white-space: nowrap;
     text-overflow: ellipsis;
+    line-height: 1.1;
+  }
+  h5 {
+    font-size: 15px;
+  }
+  .user-email {
+    font-size: 14px;
   }
   a:after {
     display: none;
+  }
+  .menu-user-avatar {
+    width: 40px;
   }
 }
 .create-btn {

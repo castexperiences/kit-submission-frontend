@@ -1,0 +1,35 @@
+aside.ng-sidebar {
+	background-color: #F7FAFC;
+	border-right: 1px solid #E1E1E1;
+	box-sizing: border-box;
+	color: $body-color;
+
+	&--closed,
+	&--docked {
+		//width: 50px;
+	}
+
+	.close-icon {
+		display: none;
+	}
+	.sidebar-nav {
+		@include media-breakpoint-down(md) {
+			position: relative;
+			.close-icon {
+				display: block;
+				position: absolute;
+				top: 8px;
+				right: 0px;
+				z-index: 2;
+			}
+		}
+	}
+
+	.sidebar-brand {
+		padding: 20px 20px 30px 25px;
+		img {
+			width: 84px;
+		}
+	}
+
+}

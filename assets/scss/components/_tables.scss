@@ -176,7 +176,7 @@ table.table {
 		tbody {
 			tr:not(.spacer) {
 				background-color: #fff;
-				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.08), inset 0px 0px 0px 1px #EBEAEA;
 				border-radius: 3px;
 
 				th {
@@ -199,6 +199,7 @@ table.table {
 				background-color: #fff;
 				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
 				border-radius: 3px;
+				border: 1px solid #EBEAEA;
 				padding: 15px 0 !important;
 
 				&.search-head-top {
@@ -377,7 +378,7 @@ table.table {
 
 	// Table rows (header and body)
 	.table-header {
-		box-shadow: 0 2px 6px 0 rgba(#000, 0.08);
+		box-shadow: 0 2px 6px 0 rgba(#000, 0.08), inset 0px 0px 0px 1px #EBEAEA;
 		background: #fff !important;
 	}
 
@@ -396,7 +397,7 @@ table.table {
 		width: 100%;
 		background: #fff;
 		border-radius: 3px;
-		box-shadow: 0 2px 6px 0 rgba(#000, 0.08);
+		box-shadow: 0 2px 6px 0 rgba(#000, 0.08), inset 0px 0px 0px 1px #EBEAEA;
 	}
 
 	.table-header {
