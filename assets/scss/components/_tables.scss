@@ -755,6 +755,11 @@ table.data-table {
 
 	thead {
 
+		// Border styling
+		tr {
+			border-bottom: 1px solid #EAEAEA;
+		}
+
 		th {
 			padding: 20px 0;
 			vertical-align: bottom;
@@ -775,9 +780,10 @@ table.data-table {
 			background-color: #F9F9F9;
 		}
 
-		// Background colour on hover
+		// Background colour on hover and border
 		tr {
-			transition: background-color .3s ease;
+			transition: background-color .1s ease;
+			border-bottom: 1px solid #EAEAEA;
 			&:hover {
 				background-color: darken(#F9F9F9, 3%);
 			}
