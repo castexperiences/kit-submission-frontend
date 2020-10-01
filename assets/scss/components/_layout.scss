@@ -8,12 +8,22 @@
 // Cards
 .card {
   height: 100%;
+  border: 1px solid #E7E7E7;
+  border-radius: 2px;
+
+  &-header {
+    background-color: #FFF;
+    border-bottom: 1px solid #E7E7E7;
+    & > * { // neutralise margins for text objects
+      margin-bottom: 0;
+    }
+  }
+
   &.transparent {
     background: none;
   }
   &-body {
-    background-color: #fff;
-    border: 1px solid #EAEAEA;
+    background-color: theme-color(background-shade) !important;
     padding: rem-calc(30,30);
     @include media-breakpoint-down(sm) {
       padding: rem-calc(25, 20);
