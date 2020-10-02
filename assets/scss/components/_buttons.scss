@@ -4,8 +4,8 @@
   padding: rem-calc(7, 20, 9, 20);
   transition: all 250ms cubic-bezier(.02, .01, .47, 1);
 
-  & > span {
-    font-family: $font-headers;
+  & > span:not(.fa):not(.fas) {
+    font-family: $font-family-sans-serif;
     font-weight: 600;
     font-size: rem-calc(15);
   }

@@ -3,7 +3,7 @@
 }
 
 // General Table Styles
-table.table {
+table.table:not(.bs-table) {
 	$font-size: 13;
 
 	// General Styles
@@ -847,5 +847,10 @@ table.data-table {
 		}
 
 	}
+
+}
+
+// Naked Table - used in batch view
+table.mini-table {
 
 }
