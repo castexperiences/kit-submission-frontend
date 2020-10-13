@@ -11,7 +11,7 @@ $font-stack: mr-eaves-xl-modern, 'Lato', -apple-system, BlinkMacSystemFont, "Seg
 // FontAwesome Import
 //@import 'icons/font-awesome/css/fontawesome-all.css';
 @import 'icons/font-awesome/scss/fontawesome.scss';
-$fa-font-path: "./icons/font-awesome/webfonts";
+$fa-font-path: "../webfonts";
 @import 'icons/font-awesome/scss/fa-brands.scss';
 @import 'icons/font-awesome/scss/fa-regular.scss';
 @import 'icons/font-awesome/scss/fa-solid.scss';

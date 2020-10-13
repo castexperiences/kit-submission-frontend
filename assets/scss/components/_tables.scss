@@ -58,16 +58,6 @@ table.table:not(.bs-table) {
 		}
 	}
 
-	@mixin status-style($status, $background: #fff, $color: #000) {
-		&.status-#{$status} {
-			td.status > span,
-			span {
-				color: $color;
-				background: $background;
-			}
-		}
-	}
-
 	// Table BODY
 	tbody {
 		tr {

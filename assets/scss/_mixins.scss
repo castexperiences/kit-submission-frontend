@@ -58,7 +58,7 @@ $browser-context: (16 * strip-unit($font-size-base)); // Default
 
 // Status Colours
 @mixin status-style($status, $background: #fff, $color: #000) {
-  &.status-#{$status} {
+  .status-#{$status} {
     td.status > span,
     & > span {
       color: $color;
