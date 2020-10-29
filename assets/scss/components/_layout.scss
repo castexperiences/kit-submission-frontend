@@ -113,6 +113,10 @@
                     color: theme-color(danger);
                 }
 
+                span.no-muted {
+                    color: $text-muted;
+                }
+
             }
         }
 
