@@ -43,6 +43,9 @@ $fa-font-path: "../webfonts";
 
 
 // Page Specific
+//- Portal
+@import 'pages/admin/submission/submission-view';
+
 //- Events
 @import 'pages/event-create';
 

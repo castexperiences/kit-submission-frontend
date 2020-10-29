@@ -16,6 +16,7 @@
 @include status-style('completed-batch-in-transit', lighten(#3b97d1, 40%), darken(#3b97d1, 10%));
 @include status-style('completed-batch-received', lighten(#70D820, 40%), darken(#70D820, 10%));
 @include status-style('sent-to-customer', lighten(#70D820, 40%), darken(#70D820, 10%));
+@include status-style('wax-received', lighten(#e98800, 40%), darken(#e98800, 10%));
 
 .status-pill {
 	span {

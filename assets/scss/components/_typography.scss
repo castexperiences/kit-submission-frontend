@@ -128,7 +128,7 @@
   letter-spacing: 0;
   font-weight: 400;
   font-style: normal;
-  color: theme-color-level(dark, -2);
+  color: theme-color-level('dark', -2);
   @if ($size) {
     @include font-size($size);
   } @else {
@@ -184,9 +184,20 @@ p.header-lead {
   color: theme-color-level(dark, -2);
   margin-bottom: 0;
 }
-
+.preheader {
+  font-weight: 500;
+  font-family: $font-headers;
+  @include font-size(14);
+  letter-spacing: 0;
+  color: theme-color-level('navy', -7);
+  margin-bottom: 4px;
+}
 .color-brand {
   color: $brand;
+}
+
+a.discreet-button {
+    color: theme-color-level('dark', -2);
 }
 
 // Span Styles
@@ -253,4 +264,13 @@ code.language-term {
   user-select: none;
   pointer-events: none;
   color: #bb9fff;
+}
+
+// Natural Pre Style
+pre.submissionNote {
+    font-family: $font-family-sans-serif;
+    @include p-style(15);
+    margin-bottom: 0;
+    margin-top: 12px;
+    white-space: pre-wrap;
 }

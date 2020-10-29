@@ -36,6 +36,12 @@
 		}
 	}
 
+    // Textarea
+    textarea.form-control {
+        border-radius: 5px;
+    }
+
+
 	// Input fields
 	.form-control {
 		padding: rem-calc(14) rem-calc(20) rem-calc(13);
@@ -128,8 +134,15 @@
 	position: relative;
 	margin: $md-checkbox-margin;
 	text-align: left;
-	width: $md-checkbox-size !important;
+    &:not(.with-label) {
+        width: $md-checkbox-size !important;
+    }
 	height: $md-checkbox-size !important;
+
+    &.with-label {
+        width: 100% !important;
+        margin: 0 0 0.6em !important;
+    }
 
 	&.checkbox-inline {
 		display: inline-flex; // changed from inline-block to vertically align on <table> rows
