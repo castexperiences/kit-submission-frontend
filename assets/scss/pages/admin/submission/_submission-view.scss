@@ -177,6 +177,10 @@ form.submission-view {
         border: 1px solid #E1E1E1;
         border-radius: 7px;
 
+        &.focus {
+            border-color: theme-color("success");
+        }
+
         // Typography Styles
         p {
             @include p-style(14);
