@@ -332,6 +332,9 @@ table.table:not(.bs-table) {
 	width: 100%;
 	margin-left: 0 !important;
 	margin-right: 0 !important;
+    @include media-breakpoint-up("md") {
+        overflow: visible !important;
+    }
 }
 
 .flex-table {
@@ -371,6 +374,11 @@ table.table:not(.bs-table) {
 	.table-header {
 		box-shadow: 0 2px 6px 0 rgba(#000, 0.08), inset 0px 0px 0px 1px #EBEAEA;
 		background: #fff !important;
+        @include media-breakpoint-up('md') {
+            position: sticky;
+            top: 0px;
+            z-index: 99;
+        }
 	}
 
 	.table-header,
