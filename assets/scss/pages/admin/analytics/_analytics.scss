@@ -1,0 +1,71 @@
+form.analytics {
+
+    // Top Bar in View page
+    .view-header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        // Date range wrapper
+        .date-range-container {
+            display: flex;
+            .form-group {
+                margin-bottom: 0;
+                display: inline-flex;
+                align-items: center;
+                padding: 0 20px 0 0;
+                &:hover {
+                    cursor: pointer;
+                }
+
+                label {
+                    padding-right: 20px;
+                    margin-right: 20px;
+                    box-shadow: inset -1px 0 #E1E1E1;
+                    margin-bottom: 0;
+                }
+
+                input {
+                    border: none !important;
+                    max-width: 130px;
+                }
+
+            }
+        }
+
+    }
+
+
+    // Just for fun
+    .ledContainer {
+        position: relative;
+        width: 100%;
+        margin-bottom: 7px;
+        color: #666;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .recordLed {
+        width: 7px;
+        height: 7px;
+        background-color: red;
+        border-radius: 50%;
+    }
+
+    .liveText {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .live {
+        animation: blinking 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+    }
+
+    @keyframes blinking {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+}

@@ -40,11 +40,13 @@ $fa-font-path: "../webfonts";
 @import 'components/status';
 @import 'components/search-bar';
 @import "~@ng-select/ng-select/themes/default.theme.css";
+@import 'components/portalUi';
 
 
 // Page Specific
 //- Portal
 @import 'pages/admin/submission/submission-view';
+@import 'pages/admin/analytics/analytics';
 
 //- Events
 @import 'pages/event-create';

@@ -1,0 +1,22 @@
+.portal {
+
+    // Styles for general view
+    &-general {
+
+    }
+
+    // Styles for view specific pages
+    &-view {
+
+        .ShadowCard {
+            background: white;
+            box-shadow: 0 1px 5px 0 rgba(0,0,0,0.14);
+            border-radius: 12px;
+            padding: 20px 40px;
+            height: 100%;
+        }
+
+    }
+
+
+}
