@@ -131,6 +131,8 @@ $guides: FALSE;
 		background: #fff;
 	}
 }
+
+// Debug positioning for pdfLabel classes
 .pdfLabel {
 	// To hide on production
 	@if ($debug != TRUE ) {
@@ -140,6 +142,8 @@ $guides: FALSE;
 	}
 }
 
+// Size Label (29 x 62 by default)
+// .size-label.manufacturing (100 x 62)
 .size-label {
 	//width: 175pt;
 	//height: 82pt;
@@ -160,18 +164,24 @@ $guides: FALSE;
 			font-family: $font-family-sans-serif;
 		}
 
-		.barcode {
-			max-height: 50px;
-			text-align: center;
-			svg {
-				width: 100%;
-				height: 100%;
-			}
-		}
-
 	}
 
-	&.page {
+    &.submissionIdLabel {
+        height: toPt(29);
+    }
+
+    .barcode {
+        max-height: 50px;
+        text-align: center;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+
+    &.page {
 		font-family: $font-headers;
 		background: #fff;
 		overflow: hidden;
@@ -274,23 +284,9 @@ $guides: FALSE;
 			font-family: $font-family-sans-serif;
 		}
 	}
-	//.no-code-section {
-	//	display: table;
-	//	& > div,
-	//	& span {
-	//		display:table-cell;
-	//		vertical-align: middle;
-	//		font-family: $font-family-sans-serif;
-	//		font-weight: bold;
-	//	}
-	//	span.label {
-	//		font-size: 10px;
-	//	}
-	//	span.code {
-	//		border: 2px solid
-	//	}
-	//}
 
+    // Table styling for labels
+    // This should make tables condensed and minimal
 	table {
 		table-layout: auto;
 		tbody {
@@ -335,7 +331,7 @@ $guides: FALSE;
 
 }
 
-
+.printIframeContainer,
 #printPdf { position: fixed; top: 0px; left: 0px; display: block;
 	padding: 0px;border: 0px;margin: 0px;
 	visibility: hidden; opacity: 0;
