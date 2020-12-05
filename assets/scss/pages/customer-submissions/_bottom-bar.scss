@@ -23,8 +23,15 @@
   }
 
   .left-items,
+  .center-items,
   .right-items {
     display: inline-block;
+  }
+
+  .center-items {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .right-items {

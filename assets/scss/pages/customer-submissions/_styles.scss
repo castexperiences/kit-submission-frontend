@@ -222,231 +222,6 @@ body.event-submission {
 	}
 
 
-	// Jewellery Types
-	.jewellery-types, .casting-types {
-		//
-		.option-row {
-			//
-			// This is the loop per row
-			.jewellery-type, .casting-type {
-
-				&:first-child,
-				&:nth-child(3n + 1) {
-					//padding-left: 0;
-				}
-
-				&:nth-child(3n + 0) {
-					//padding-right: 0;
-				}
-
-				.label-inner-wrapper {
-					padding: 25px;
-				}
-				.label-inner-button {
-					border-radius: 0 0 3px 3px;
-					padding: 10px;
-					border-top: 1px solid #D6DFE6;
-					color: theme-color("primary");
-					&::after {
-						content: 'Select this type';
-					}
-				}
-
-				input {
-					display: none;
-					visibility: hidden;
-					left: -999px;
-				}
-
-				label {
-					position: relative;
-					border: 1px solid #D6DFE6;
-					border-radius: 3px;
-					padding: 0;
-					width: 100%;
-					text-align: center;
-					user-select: none;
-					transition: all 200ms ease-in-out;
-					margin-bottom: 2rem;
-
-					&:hover {
-						cursor: pointer;
-						border-color: darken(#D5D5D5, 5%);
-					}
-
-					.type-img {
-						max-height: 120px;
-					}
-
-					.type-name {
-						font-weight: 600;
-						text-transform: capitalize;
-						color: lighten($brand-black, 20%);
-						font-size: rem-calc(18);
-						margin-bottom: 0;
-						padding-top: 10px;
-					}
-
-					.attribute-pills {
-						display: block;
-						margin: 0;
-						padding: 0;
-						list-style-type: none;
-						text-align: left;
-						li {
-							display: inline-block;
-							color: theme-color-level("dark", -2);
-							padding: 4px 7px;
-							border: 1px solid #D6DFE6;
-							margin-right: 4px;
-							margin-bottom: 4px;
-						}
-					}
-
-				}
-
-				// Checked state
-				input[type="radio"] + label {
-					&:after,
-					&::after {
-						display: inline-block;
-						font-style: normal;
-						font-variant: normal;
-						text-rendering: auto;
-						-webkit-font-smoothing: antialiased;
-						transition: opacity .2s ease, transform .2s ease;
-						position: absolute;
-						top: 5px;
-						right: 10px;
-						font-family: "Font Awesome 5 Free";
-						font-weight: 900;
-						font-size: rem-calc(30);
-						content: '\f058';
-						line-height: 1;
-						color: $brand;
-						opacity: 0;
-						transform: scale(0.7);
-					}
-				}
-
-				input[type="radio"]:checked + label {
-					border-color: $brand;
-
-					.label-inner-button {
-						background-color: theme-color("primary");
-						color: #FFFFFF;
-						&::after {
-							content: 'Selected';
-						}
-					}
-
-					// tick icon
-					&:after,
-					&::after {
-						opacity: 1;
-						transform: scale(1);
-					}
-
-				}
-
-				// When jewellery type has no image
-				&.noimg {
-					label {
-
-						.type-name {
-							transition: padding 200ms ease;
-							padding: 0;
-							padding-right: 0;
-						}
-
-					}
-
-					input[type="radio"]:checked + label {
-						.type-name {
-							padding-right: calc(8% + 12.5px);
-						}
-
-						&:after,
-						&::after {
-							top: 28%;
-							right: 8%;
-						}
-					}
-				}
-
-			}
-
-			//
-		}
-
-		p.type-header {
-			padding-top: 15px;
-			font-weight: 600;
-			text-transform: lowercase;
-			color: $brand-black;
-			font-size: rem-calc(18);
-		}
-
-	}
-
-	// Casting Types {
-	.casting-types {
-		.option-row {
-			.casting-type {
-				display: flex;
-				flex-wrap: wrap;
-				@include make-col-ready();
-				@include media-breakpoint-only(sm) {
-					@include make-col(6);
-				}
-				@include media-breakpoint-up(md) {
-					@include make-col(4);
-				}
-
-				.type-wrapper {
-					display: flex;
-					flex-direction: column;
-					margin-bottom: 2rem;
-				}
-
-				label {
-					display: flex;
-					flex-direction: column;
-					flex: 1 0 auto;
-					margin-bottom: 0;
-					.type-name {
-						.muted {
-							opacity: 0.5;
-							@include font-size(14);
-						}
-					}
-
-					.label-inner-wrapper {
-						flex: 1 0 auto;
-					}
-
-				}
-
-				a.see {
-					padding: 8px 0;
-					color: #9BC1BC;
-					text-align: center;
-					@include font-size(13);
-				}
-
-				p {
-					text-align: left;
-					font-weight: 400;
-					color: theme-color-level("dark", -4);
-					&.type-name {
-						color: theme-color("dark");
-						@include font-size(18);
-					}
-				}
-			}
-		}
-	}
-
 	.sidebar-open .casting-types {
 		.option-row {
 			.casting-type {
@@ -718,6 +493,234 @@ body.event-submission.confirmation {
 	margin-right: 11px;
 	margin-top: 5px;
 }
+
+// General Public Style
+
+// Jewellery Types
+.jewellery-types, .casting-types {
+	//
+	.option-row {
+		//
+		// This is the loop per row
+		.jewellery-type, .casting-type {
+
+			&:first-child,
+			&:nth-child(3n + 1) {
+				//padding-left: 0;
+			}
+
+			&:nth-child(3n + 0) {
+				//padding-right: 0;
+			}
+
+			.label-inner-wrapper {
+				padding: 25px;
+			}
+			.label-inner-button {
+				border-radius: 0 0 3px 3px;
+				padding: 10px;
+				border-top: 1px solid #D6DFE6;
+				color: theme-color("primary");
+				&::after {
+					content: 'Select this type';
+				}
+			}
+
+			input {
+				display: none;
+				visibility: hidden;
+				left: -999px;
+			}
+
+			label {
+				position: relative;
+				border: 1px solid #D6DFE6;
+				border-radius: 3px;
+				padding: 0;
+				width: 100%;
+				text-align: center;
+				user-select: none;
+				transition: all 200ms ease-in-out;
+				margin-bottom: 2rem;
+
+				&:hover {
+					cursor: pointer;
+					border-color: darken(#D5D5D5, 5%);
+				}
+
+				.type-img {
+					max-height: 120px;
+				}
+
+				.type-name {
+					font-weight: 600;
+					text-transform: capitalize;
+					color: lighten($brand-black, 20%);
+					font-size: rem-calc(18);
+					margin-bottom: 0;
+					padding-top: 10px;
+				}
+
+				.attribute-pills {
+					display: block;
+					margin: 0;
+					padding: 0;
+					list-style-type: none;
+					text-align: left;
+					li {
+						display: inline-block;
+						color: theme-color-level("dark", -2);
+						padding: 4px 7px;
+						border: 1px solid #D6DFE6;
+						margin-right: 4px;
+						margin-bottom: 4px;
+					}
+				}
+
+			}
+
+			// Checked state
+			input[type="radio"] + label {
+				&:after,
+				&::after {
+					display: inline-block;
+					font-style: normal;
+					font-variant: normal;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					transition: opacity .2s ease, transform .2s ease;
+					position: absolute;
+					top: 5px;
+					right: 10px;
+					font-family: "Font Awesome 5 Free";
+					font-weight: 900;
+					font-size: rem-calc(30);
+					content: '\f058';
+					line-height: 1;
+					color: $brand;
+					opacity: 0;
+					transform: scale(0.7);
+				}
+			}
+
+			input[type="radio"]:checked + label {
+				border-color: $brand;
+
+				.label-inner-button {
+					background-color: theme-color("primary");
+					color: #FFFFFF;
+					&::after {
+						content: 'Selected';
+					}
+				}
+
+				// tick icon
+				&:after,
+				&::after {
+					opacity: 1;
+					transform: scale(1);
+				}
+
+			}
+
+			// When jewellery type has no image
+			&.noimg {
+				label {
+
+					.type-name {
+						transition: padding 200ms ease;
+						padding: 0;
+						padding-right: 0;
+					}
+
+				}
+
+				input[type="radio"]:checked + label {
+					.type-name {
+						padding-right: calc(8% + 12.5px);
+					}
+
+					&:after,
+					&::after {
+						top: 28%;
+						right: 8%;
+					}
+				}
+			}
+
+		}
+
+		//
+	}
+
+	p.type-header {
+		padding-top: 15px;
+		font-weight: 600;
+		text-transform: lowercase;
+		color: $brand-black;
+		font-size: rem-calc(18);
+	}
+
+}
+
+// Casting Types {
+.casting-types {
+	.option-row {
+		.casting-type {
+			display: flex;
+			flex-wrap: wrap;
+			@include make-col-ready();
+			@include media-breakpoint-only(sm) {
+				@include make-col(6);
+			}
+			@include media-breakpoint-up(md) {
+				@include make-col(4);
+			}
+
+			.type-wrapper {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 2rem;
+			}
+
+			label {
+				display: flex;
+				flex-direction: column;
+				flex: 1 0 auto;
+				margin-bottom: 0;
+				.type-name {
+					.muted {
+						opacity: 0.5;
+						@include font-size(14);
+					}
+				}
+
+				.label-inner-wrapper {
+					flex: 1 0 auto;
+				}
+
+			}
+
+			a.see {
+				padding: 8px 0;
+				color: #9BC1BC;
+				text-align: center;
+				@include font-size(13);
+			}
+
+			p {
+				text-align: left;
+				font-weight: 400;
+				color: theme-color-level("dark", -4);
+				&.type-name {
+					color: theme-color("dark");
+					@include font-size(18);
+				}
+			}
+		}
+	}
+}
+
 
 
 // Type Specific Overrides
