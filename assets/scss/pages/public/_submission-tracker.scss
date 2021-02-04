@@ -1,368 +1,290 @@
 body.submission-tracking {
-	background-color: $cream !important;
-
-	$content-padding: 50px;
-	$content-padding-sm: 30px;
-
-	// General row
-	.row {
-		max-width: 2000px;
-		margin: 0 auto;
-	}
-
-	// Common Header
-	header {
-
-		img {
-			height: 32px;
-		}
-
-		@include media-breakpoint-down(sm) {
-			margin-top: 50px;
-		}
-	}
-
-	.container.with_results {
-		// Grid overrides
-		.main-content {
-			max-width: 1000px;
-
-			&--inner {
-				padding: 0 $content-padding-sm;
-				@include media-breakpoint-up(md) {
-					padding: 0 $content-padding;
-				}
-			}
-		}
-
-		// Search Results
-		.result-content {
-
-			&--header {
-
-				padding-bottom: 20px;
-				@include media-breakpoint-up(md) {
-					padding-bottom: 40px;
-				}
-				border-bottom: 1px solid theme-color-level(cream, 3);
-
-				.inline {
-					display: inline-flex;
-					align-content: center;
-					position: relative;
-
-					a {
-						@include media-breakpoint-up(md) {
-							position: absolute;
-							left: -35px;
-							top: 50%;
-							transform: translateY(-50%);
-						}
-						color: theme-color(font-dark);
-						@include media-breakpoint-down(sm) {
-							position: relative;
-							padding-right: 20px;
-							top: 3px;
-						}
-
-						&:hover {
-							text-decoration: none;
-							color: theme-color(coral);
-						}
-					}
-
-				}
-
-				.search-reference {
-					color: theme-color-level(font-dark, -5);
-					@include font-size(17);
-					font-weight: bold;
-				}
-
-			}
-
-			&--dates {
-				&.row {
-					@include media-breakpoint-down(sm) {
-						flex-flow: column;
-						text-align: left !important;
-
-						.col:not(:last-child) {
-							margin-bottom: 50px;
-							position: relative;
-
-							&:after {
-								position: absolute;
-								left: 10px;
-								bottom: -20px;
-								opacity: 0.5;
-								@include fa($fa-var-chevron-down);
-							}
-						}
-
-						.col.arrow {
-							display: none !important;
-						}
-
-					}
-				}
-
-				p {
-					@include font-size(15);
-					margin-bottom: 0;
-
-					&.date {
-						font-weight: bold;
-						color: theme-color(font-dark);
-						@include font-size(18);
-
-						.text-muted {
-							font-weight: normal;
-						}
-					}
-
-					span.week-of {
-						@include font-size(11);
-						text-transform: uppercase;
-						font-weight: bold;
-						padding-right: 6px;
-						opacity: 0.5;
-					}
-				}
-
-				i {
-					position: relative;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-
-				.fg-2 {
-					flex-grow: 2;
-				}
-			}
-
-			&--timeline {
-				margin-bottom: 45px;
-				margin-top: 20px;
-
-				.line-container {
-					display: flex;
-					width: 100%;
-					margin-bottom: 30px;
-					margin-top: 10px;
-					position: relative;
-
-
-					.progress-line {
-						position: relative;
-						margin: 0 auto;
-						border-radius: 10px;
-						width: 100%;
-						background: none;
-						height: 2px;
-						z-index: -1;
-						display: flex;
-						justify-content: space-between;
-
-						.progress {
-							position: absolute;
-							width: 95%;
-							height: 2px;
-							left: 2.5%;
-							background: theme-color(success);
-							transition: width 1s ease-in-out;
-
-							&.base {
-								background: #DBD9D5;
-							}
-						}
-					}
-
-					.status {
-						position: relative;
-						top: -24px;
-
-						.dot {
-							width: 50px;
-							height: 50px;
-							border-radius: 50%;
-							background: #DBD9D5;
-							cursor: pointer;
-							margin: 0 auto;
-						}
-
-						p {
-							text-align: center;
-							@include font-size(14);
-							margin-top: 12px;
-						}
-
-						&.current {
-							.dot {
-								background: theme-color(warning) !important;
-
-								&::after {
-									content: fa-content($fa-var-ellipsis-h) !important;
-								}
-							}
-						}
-
-						&.complete {
-							.dot {
-								position: relative;
-								background: theme-color(success);
-
-								&::after {
-									@include fa($fa-var-check, 'solid');
-									position: absolute;
-									color: #fff;
-									font-size: 16px;
-									width: 50px;
-									top: 50%;
-									transform: translateY(-50%);
-									left: 0;
-									z-index: 2;
-									text-align: center;
-								}
-							}
-
-							p {
-								font-weight: bold;
-							}
-						}
-
-					}
-
-				}
-			}
-
-			&--tasks {
-				.table-responsive {
-					border: 1px solid #CBC9C1;
-					border-radius: 8px;
-
-					table.tasks {
-						width: 100%;
-
-						th, td {
-							vertical-align: middle;
-							padding: 8px 4px;
-						}
-
-						th {
-							font-weight: bold;
-							padding-left: 30px;
-							padding-right: 20px;
-						}
-
-						td:last-child {
-							padding-right: 30px;
-						}
-
-						td.shrink,
-						th.shrink {
-							width: 0.1%;
-							white-space: nowrap;
-						}
-
-						td.grow {
-							width: 100%;
-						}
-
-						tr:nth-child(odd) {
-							background-color: theme-color-level(cream, 1);
-						}
-
-						.status-icon {
-							width: 30px;
-							height: 30px;
-							border-radius: 50%;
-							position: relative;
-
-							&::after {
-								@include fa(null, 'solid');
-								position: absolute;
-								color: #fff;
-								font-size: 12px;
-								width: 100%;
-								top: 50%;
-								text-align: center;
-								left: 0;
-								transform: translateY(-50%);
-							}
-
-							&.true {
-								background-color: theme-color(success);
-
-								&::after {
-									content: fa-content($fa-var-check);
-								}
-							}
-
-							&.false {
-								background-color: theme-color(warning);
-
-								&::after {
-									content: fa-content($fa-var-ellipsis-h);
-								}
-							}
-
-						}
-
-					}
-				}
-			}
-
-		}
-	}
-
-	.container-fluid.search {
-		.main-content {
-			padding: 5%;
-			height: 100vh;
-			position: relative;
-
-			header {
-				position: absolute;
-				top: 5%;
-				left: 5%;
-			}
-
-			.form-wrapper {
-				@include media-breakpoint-up(md) {
-					margin-bottom: 50px;
-				}
-
-				input::placeholder,
-				input[placeholder] {
-					text-transform: none !important;
-				}
-
-			}
-
-		}
-
-		.img-container {
-			height: 100vh;
-			max-height: 1600px;
-			position: relative;
-
-			@include media-breakpoint-down(sm) {
-				display: none !important;
-			}
-
-			.img {
-				position: absolute;
-				width: 98%;
-				height: 96%;
-				top: 2%;
-				background-color: theme-color-level(light, 2);
-				border-radius: 20px;
-				background-image: url('/assets/img/tracking-hero.jpg');
-				background-size: cover;
-				background-position: center center;
-			}
-		}
-	}
+    background-color: $cream;
+
+    /**
+     * Common Header
+     */
+    header {
+
+        img {
+            height: 32px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-top: 50px;
+        }
+    }
+
+    .container-sm {
+        @include make-container();
+        max-width: em-calc(800);
+        .row {
+            @include media-breakpoint-down(sm) {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }
+    }
+
+    /**
+     * Submission Tracker Page
+     */
+    #submission-tracking-results {
+
+        $overhang: 50px;
+
+        // Navy full-width bar at the top
+        .entry-content {
+            background-color: theme-color('navy');
+            padding: 25px 15px $overhang 15px;
+
+            // Submission Tracker Navigation
+            .tracking-nav {
+
+                a {
+                    color: #fff;
+                    transition: opacity .3s ease;
+
+                    &:hover, &:focus {
+                        text-decoration: none;
+                        opacity: 0.8;
+                    }
+                }
+
+                #reset-search {
+                    font-weight: 500;
+                    position: relative;
+
+                    &::before {
+                        @include fa($fa-var-chevron-left);
+                        padding-right: 6px;
+                    }
+                }
+
+            }
+
+        }
+
+        .progress-overview {
+            margin-top: $overhang / -1;
+            margin-bottom: 50px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 35px;
+            }
+
+            .progress-overview-wrapper {
+                background-color: #fff;
+                border-radius: 12px;
+                box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.1);
+                padding: 20px;
+
+                .timeline {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    width: 100%;
+
+                    .progress.step {
+                        width: 100%;
+                        border-radius: 0;
+                        background-color: #D8D8D8;
+                        margin-right: 5px;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &.primary {
+                            flex-basis: 400%;
+                            @include media-breakpoint-down(sm) {
+                                flex-basis: 320%;
+                            }
+                        }
+                        &.notInProduction {
+                            .progress-bar {
+                                width: 0 !important;
+                            }
+                        }
+                    }
+
+                    .stage {
+                        $height: 5px;
+                        width: 100%;
+                        height: $height;
+                        margin-right: $height;
+                        background-color: #D8D8D8;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &.primary {
+                            flex-basis: 400%;
+                            @include media-breakpoint-down(sm) {
+                                flex-basis: 320%;
+                            }
+                        }
+
+                        &.active {
+                            background-color: theme-color('primary');
+                        }
+                    }
+
+
+                }
+            }
+
+        }
+
+        .stripe-bg {
+            background-color: rgba(#A0A0A0, 0.07);
+        }
+
+        .production-jobs {
+            margin-top: 50px;
+            @include media-breakpoint-down(sm) {
+                margin-top: 35px;
+            }
+
+            .job-table {
+                width: 100%;
+            }
+
+
+            table.tasks {
+                background-color: #fff;
+                box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.1);
+                width: 100%;
+                border-spacing: 0;
+                border-radius: 12px;
+
+                th, td {
+                    vertical-align: middle;
+                    padding: 14px 4px;
+                }
+
+                td {
+                    padding-right: 15px;
+                }
+
+                th {
+                    font-weight: bold;
+                    padding-left: 15px;
+                    padding-right: 20px;
+                    @include media-breakpoint-up(md) {
+                        padding-left: 30px;
+                    }
+                }
+
+
+                tr:first-child {
+                    th, td {
+                        padding-top: 30px;
+                    }
+                }
+                tr:last-child {
+                    th, td {
+                        padding-bottom: 30px;
+                    }
+                }
+
+                //tr:nth-child(odd) {
+                //    background-color: theme-color-level(cream, 1);
+                //}
+
+                .status-icon {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    position: relative;
+
+                    &::after {
+                        @include fa(null, 'solid');
+                        position: absolute;
+                        color: #fff;
+                        font-size: 12px;
+                        width: 100%;
+                        top: 50%;
+                        text-align: center;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+
+                    &.true {
+                        background-color: rgba(theme-color(success), 0.2);
+                        border: 1px solid theme-color(success);
+
+                        &::after {
+                            color: theme-color(success);
+                            content: fa-content($fa-var-check);
+                        }
+                    }
+
+                    &.false {
+                        background-color: rgba(theme-color(warning), 0.2);
+                        border: 1px solid theme-color(warning);
+
+                        &::after {
+                            color: theme-color(warning);
+                            content: fa-content($fa-var-ellipsis-h);
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /**
+     * Search Page
+     */
+    .container-fluid.search {
+        .main-content {
+            padding: 5%;
+            height: 100vh;
+            position: relative;
+
+            header {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+            }
+
+            .form-wrapper {
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 50px;
+                }
+
+                input::placeholder,
+                input[placeholder] {
+                    text-transform: none !important;
+                }
+
+            }
+
+        }
+
+        .img-container {
+            height: 100vh;
+            max-height: 1600px;
+            position: relative;
+
+            @include media-breakpoint-down(sm) {
+                display: none !important;
+            }
+
+            .img {
+                position: absolute;
+                width: 98%;
+                height: 96%;
+                top: 2%;
+                background-color: theme-color-level(light, 2);
+                border-radius: 20px;
+                background-image: url('/assets/img/tracking-hero.jpg');
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+    }
 
 }
