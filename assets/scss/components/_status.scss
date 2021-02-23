@@ -17,9 +17,16 @@
 @include status-style('completed-batch-received', lighten(#70D820, 40%), darken(#70D820, 10%));
 @include status-style('sent-to-customer', lighten(#70D820, 40%), darken(#70D820, 10%));
 @include status-style('wax-received', lighten(#e98800, 40%), darken(#e98800, 10%));
+@include status-style('delivery-pending', lighten(#888888, 40%), darken(#888888, 10%));
+@include status-style('partner-batch-received', lighten(#888888, 40%), darken(#888888, 10%));
+@include status-style('submission-processed', lighten(#888888, 40%), darken(#888888, 10%));
+@include status-style('cancelled', lighten(#f02210, 40%), darken(#f02210, 10%));
+@include status-style('failed-delivery', lighten(#f02210, 40%), darken(#f02210, 10%));
+@include status-style('return-expected', lighten(gold, 40%), darken(gold, 10%));
+@include status-style('return-received', lighten(gold, 40%), darken(gold, 10%));
 
 .status-pill {
-	span {
+	span, label {
 		white-space: nowrap;
 		font-family: $font-family-sans-serif;
 		@include font-size(14);

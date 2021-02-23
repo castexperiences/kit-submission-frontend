@@ -2,6 +2,12 @@
 	max-width: 1300px;
 }
 
+.table-responsive {
+    &.show-overflow {
+        overflow: visible;
+    }
+}
+
 // General Table Styles
 table.table:not(.bs-table) {
 	$font-size: 13;
@@ -106,7 +112,7 @@ table.table:not(.bs-table) {
 
 			&[class^="status-"] {
 				td.status {
-					span {
+					span, label {
 						padding: 5px 20px;
 						line-height: 13px;
 						font-weight: 500;
@@ -116,11 +122,6 @@ table.table:not(.bs-table) {
 					}
 				}
 			}
-
-			&.status-pending {
-				opacity: 0.5;
-			}
-
 		}
 	}
 
@@ -129,12 +130,6 @@ table.table:not(.bs-table) {
 		color: theme-color-level('dark', -4);
 		@include font-size(14);
 		margin-bottom: 0;
-	}
-
-	&.kit-submissions {
-		tr.status-pending {
-			opacity: 1 !important;
-		}
 	}
 
 	// Hover button style

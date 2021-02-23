@@ -60,7 +60,8 @@ $browser-context: (16 * strip-unit($font-size-base)); // Default
 @mixin status-style($status, $background: #fff, $color: #000) {
   .status-#{$status} {
     td.status > span,
-    & > span {
+    & > span,
+    label {
       color: $color;
       background: $background;
     }
