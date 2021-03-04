@@ -308,6 +308,13 @@ table.table:not(.bs-table) {
 
 	}
 
+    // Shrink
+    td.shrink,
+    th.shrink {
+        width: 0.1%;
+        white-space: nowrap;
+    }
+
 }
 
 // Table button toolbar
