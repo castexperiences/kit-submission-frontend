@@ -211,6 +211,16 @@ form.portal-view {
             }
         }
 
+        // Stone Color
+        span.stone-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
     }
 
 }
