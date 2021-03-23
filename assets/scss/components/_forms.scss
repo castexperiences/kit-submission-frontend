@@ -225,6 +225,32 @@
 
 }
 
+// Add / Remove Button Checkbox Style
+.select-button-control {
+    & > label {
+        position: relative;
+        background-color: theme-color("primary");
+        border-radius: $btn-border-radius;
+        padding: $btn-padding-y $btn-padding-x;
+        color: #fff;
+        transition: $transitions;
+        &:hover {
+            cursor: pointer;
+            background-color: theme-color-level("primary", 2);
+        }
+    }
+    & > input:checked + label {
+        position: relative;
+        background-color: theme-color("success");
+        &:before {
+            @include fa('\f00c');
+            vertical-align: middle;
+            @include font-size(12);
+            padding-right: 4px;
+        }
+    }
+}
+
 // Radio Buttons
 .inline-options {
 	.option {
@@ -263,6 +289,99 @@
 
 		}
 	}
+}
+
+// Radio Yes / No Toggle
+// Inspired by: https://codepen.io/Moiety/pen/cwGmo
+// Add .toggle-inline to label to force inline style
+// Usage: wrap input and span inside the label
+.form-group.toggle-yn {
+    label {
+        display: inline-block;
+        position: relative;
+        padding: 13px 3px 13px 0;
+        overflow: hidden;
+        line-height: 22px;
+        user-select: none;
+        transition: all .2s ease;
+
+        input {
+            position: absolute;
+            bottom: 100%;
+            z-index: -1;
+        }
+
+        span {
+            position: relative;
+            display: block;
+            margin-top: 6px;
+            width: 102px;
+            height: 42px;
+            border: 1px solid #e76e72;
+            border-radius: 5px;
+            box-shadow: inset 0 0 2px #e76e72;
+            vertical-align: middle;
+            background-color: #f0a9ab;
+            transition: all .2s ease;
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 25%;
+                transform: translate(-50%, -50%);
+                color: #292929 ;
+                font-size: 16px;
+                content: 'no';
+
+            }
+
+            &::after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 45px;
+                height: 30px;
+                border-radius: 3px;
+                box-shadow: 0 1px 2px #e66268;
+                transform: translateY(-50%);
+                background-color: #ffffff;
+                background-image: radial-gradient(ellipse at center, #eee 52%,rgba(255,255,255,0) 53%), radial-gradient(ellipse at center, #cfcfcf 52%, rgba(255,255,255,0) 53%);
+                background-position: 20px 12px, 19px 11px;
+                background-repeat: no-repeat;
+                background-size: 7px 8px, 9px 9px;
+                content: '';
+                transition: all .2s ease;
+            }
+        }
+
+        &.toggle-inline {
+            span {
+                display: inline-block;
+                margin: -10px 0 -10px 20px;
+            }
+        }
+
+        input:checked + span {
+            border-color: theme-color-level("success", 4);
+            box-shadow: inset 0 0 2px theme-color-level("success", 4);
+            background-color: theme-color-level("success", -4);
+
+            &::before {
+                content: 'yes';
+                left: 75%;
+            }
+
+            &::after {
+                left: 5px;
+                box-shadow: 0 1px 2px theme-color-level("success", 4);
+            }
+        }
+
+        input:focus + span {
+            box-shadow: 0 0 0 3px #bdd7f7;
+        }
+    }
 }
 
 // Address Lookup

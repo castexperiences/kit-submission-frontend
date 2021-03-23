@@ -74,3 +74,17 @@
   }
 
 }
+
+// Voucher specific bottom bar
+.voucher-bottom-bar {
+    positon: fixed;
+    transition: $transitions;
+    bottom: 0;
+    left: 0;
+
+    &.hidden {
+
+    }
+
+}
+

@@ -1,114 +1,129 @@
 .btn {
-  font-weight: 600;
-  font-size: rem-calc(15);
-  padding: rem-calc(7, 20, 9, 20);
-  transition: all 250ms cubic-bezier(.02, .01, .47, 1);
-
-  & > span:not(.fa):not(.fas) {
-    font-family: $font-family-sans-serif;
     font-weight: 600;
-    font-size: rem-calc(15);
-  }
+    transition: all 250ms cubic-bezier(.02, .01, .47, 1);
 
-  &-primary:hover {
-    opacity: 0.65;
-  }
-
-  &-primary,
-  &-primary:disabled,
-  &-primary.disabled {
-    color: #ffffff;
-  }
-
-  &-sm {
-    padding: 10px !important;
-  }
-  &-grey {
-    color: #fff;
-    background-color: $brand-grey;
-  }
-  &-grey:hover {
-    color: #fff;
-    background-color: $gray-700;
-  }
-
-  // Outlines
-  &-outline- {
-    &secondary {
-      color: #3C3845;
-      border-radius: 4px;
-      background: none;
-      &:hover,
-      &:active,
-      &:focus {
-        color: #fff !important;
-      }
-    }
-  }
-
-  &.nav-group { //inline button groups we use as navs
-    &:disabled,
-    &[disabled="true"] {
-      opacity: 0.5;
-      cursor: not-allowed;
-      pointer-events:none;
-      //filter: grayscale(100%);
-    }
-  }
-
-  // Data Table - Outline Icon Buttons
-  &.icon-btn-outline {
-    transition: all .3s ease;
-    padding: 4px 10px;
-    width: auto;
-    min-width: 35px;
-    height: 35px;
-    border-radius: 4px !important;
-    background: none;
-    border: 1px solid #CDCDCD;
-    color: #5e6163;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    @include font-size(12);
-    &:hover:not(:disabled):not([disabled]),
-    &:focus:not(:disabled):not([disabled]) {
-      border-color: darken(#CDCDCD, 10%);
-    }
-    &[disabled],
-    &:disabled {
-      background-color: #CDCDCD;
-      opacity: 0.5;
+    &:not(.btn-lg):not(.btn-sm) {
+        font-size: rem-calc(15);
+        padding: rem-calc(7, 20, 9, 20);
     }
 
-    &.dropdown-toggle:empty::after {
-      margin-left: 0.255em !important;
-      vertical-align: middle !important;
+    &.btn-lg {
+
     }
 
-    // Small inline versions
-    &.icon-btn-small {
-      @include font-size(10, true);
-      vertical-align: middle;
-      width: 20px;
-      min-width: 20px;
-      height: 20px;
-      margin-top: 0;
-      padding: 4px !important;
+    & > span:not(.fa):not(.fas) {
+        font-family: $font-family-sans-serif;
+        font-weight: 600;
+        font-size: rem-calc(15);
     }
 
-    &.color-primary:not(:disabled),
-    &.color-primary:not([disabled]) {
-      color: theme-color(primary);
-      border-color: theme-color(primary);
-      transition: all .3s ease;
-      &:hover,
-      &:focus {
-        background-color: theme-color-level(primary, -8);
-        border-color: theme-color(primary);
-      }
+    &-primary:hover {
+        opacity: 0.65;
     }
 
-  }
+    &-primary,
+    &-primary:disabled,
+    &-primary.disabled {
+        color: #ffffff;
+    }
+
+    &-sm {
+        padding: 10px !important;
+    }
+
+    &-grey {
+        color: #fff;
+        background-color: $brand-grey;
+    }
+
+    &-grey:hover {
+        color: #fff;
+        background-color: $gray-700;
+    }
+
+    // Outlines
+    &-outline- {
+        &secondary {
+            color: #3C3845;
+            border-radius: 4px;
+            background: none;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: theme-color("navy");
+                color: #fff !important;
+            }
+        }
+    }
+
+    &.nav-group { //inline button groups we use as navs
+        &:disabled,
+        &[disabled="true"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            //filter: grayscale(100%);
+        }
+    }
+
+    // Data Table - Outline Icon Buttons
+    &.icon-btn-outline {
+        transition: all .3s ease;
+        padding: 4px 10px;
+        width: auto;
+        min-width: 35px;
+        height: 35px;
+        border-radius: 4px !important;
+        background: none;
+        border: 1px solid #CDCDCD;
+        color: #5e6163;
+        margin-bottom: 2px;
+        margin-top: 2px;
+        @include font-size(12);
+
+        &:hover:not(:disabled):not([disabled]),
+        &:focus:not(:disabled):not([disabled]) {
+            border-color: darken(#CDCDCD, 10%);
+        }
+
+        &[disabled],
+        &:disabled {
+            background-color: #CDCDCD;
+            opacity: 0.5;
+        }
+
+        &.dropdown-toggle:empty::after {
+            margin-left: 0.255em !important;
+            vertical-align: middle !important;
+        }
+
+        // Small inline versions
+        &.icon-btn-small {
+            @include font-size(10, true);
+            vertical-align: middle;
+            width: 20px;
+            min-width: 20px;
+            height: 20px;
+            margin-top: 0;
+            padding: 4px !important;
+        }
+
+        &.color-primary:not(:disabled),
+        &.color-primary:not([disabled]) {
+            color: theme-color(primary);
+            border-color: theme-color(primary);
+            transition: all .3s ease;
+
+            &:hover,
+            &:focus {
+                background-color: theme-color-level(primary, -8);
+                border-color: theme-color(primary);
+            }
+        }
+
+    }
+
     &.btn-invisible {
         border: none;
         background-color: transparent;
@@ -128,11 +143,11 @@
 }
 
 .small-button {
-  padding: 5px 10px 4px 10px;
+    padding: 5px 10px 4px 10px;
 }
 
 .round {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 .btn.disabled, .btn:disabled {
@@ -140,9 +155,9 @@
 }
 
 .status-pill-tooltip {
-  .tooltip-inner {
-    border-radius: 160px;
-    padding: 10px;
-  }
+    .tooltip-inner {
+        border-radius: 160px;
+        padding: 10px;
+    }
 }
 

@@ -1,0 +1,24 @@
+.voucher-create-form {
+    transition: padding $transitions;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 60px;
+    }
+
+    &.price-shown {
+        padding-bottom: 50px;
+    }
+
+}
+
+.voucher-bottom-bar {
+    transition: transform $transitions;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+
+    &.hidden {
+        transform: translateY(100%);
+    }
+
+}

@@ -538,7 +538,7 @@ body.event-submission.confirmation {
 			label {
 				position: relative;
 				border: 1px solid #D6DFE6;
-				border-radius: 3px;
+				border-radius: $border-radius;
 				padding: 0;
 				width: 100%;
 				text-align: center;
@@ -582,6 +582,7 @@ body.event-submission.confirmation {
 						padding: 4px 7px;
 						border: 1px solid #D6DFE6;
 						margin-right: 4px;
+                        font-weight: 400;
 						margin-bottom: 4px;
 					}
 				}
@@ -685,6 +686,10 @@ body.event-submission.confirmation {
 			@include media-breakpoint-up(md) {
 				@include make-col(4);
 			}
+            @include media-breakpoint-down(xs) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
 			.type-wrapper {
 				display: flex;
@@ -693,14 +698,15 @@ body.event-submission.confirmation {
 			}
 
 			label {
+                background-color: #fff;
 				display: flex;
 				flex-direction: column;
 				flex: 1 0 auto;
 				margin-bottom: 0;
 				.type-name {
-					.muted {
-						opacity: 0.5;
+					span {
 						@include font-size(14);
+                        padding-left: 8px;
 					}
 				}
 
@@ -712,7 +718,7 @@ body.event-submission.confirmation {
 
 			a.see {
 				padding: 8px 0;
-				color: #9BC1BC;
+				color: theme-color-level('font-dark', -4);
 				text-align: center;
 				@include font-size(13);
 			}
@@ -850,8 +856,27 @@ body.event-submission.confirmation {
     }
 }
 
+// Voucher Create
+.voucher-create-extras {
+    & > .col {
+        margin-bottom: 1.5rem;
+    }
+    .extra {
+        padding: 2em 1.2em;
+        border-radius: $border-radius;
+        height:100%;
+        display: flex;
+        flex-flow: column;
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 1em;
+        }
+
+    }
+}
 
 
 // Type Specific Overrides
 @import 'events-only';
 @import 'kits-only';
+@import 'voucher-create';
