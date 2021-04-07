@@ -181,6 +181,10 @@ form.portal-view {
             border-color: theme-color("success");
         }
 
+        &.failed {
+            border-color: theme-color("danger");
+        }
+
         // Typography Styles
         p {
             @include p-style(14);
