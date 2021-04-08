@@ -205,7 +205,7 @@ table.table:not(.bs-table) {
 				}
 			}
 
-            th.filter {
+            th.filter-column {
                 .btn {
                     padding: 0;
                     @include font-size(12);
