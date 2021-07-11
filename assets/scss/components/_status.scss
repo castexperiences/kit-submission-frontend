@@ -25,6 +25,7 @@
 @include status-style('return-expected', lighten(gold, 40%), darken(gold, 10%));
 @include status-style('return-received', lighten(gold, 40%), darken(gold, 10%));
 
+// Status container
 .status-pill {
 	span, label {
 		white-space: nowrap;
@@ -34,4 +35,25 @@
 		border-radius: 25px;
 		font-weight: bold;
 	}
+}
+
+// Pill tag style
+.pill-tag {
+    padding: 3px 6px;
+    border-radius: 20px;
+    @include font-size(11);
+    font-weight: 600;
+
+    &.wedding {
+        background-color: theme-color("success");
+        color: #fff;
+    }
+    &.hard-deadline {
+        background: red;
+        color: #fff;
+    }
+    &.on-hold {
+        background-color: grey;
+        color: #fff;
+    }
 }

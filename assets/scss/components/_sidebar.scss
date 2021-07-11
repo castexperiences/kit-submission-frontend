@@ -1,4 +1,5 @@
-aside.ng-sidebar {
+// Main Menu Sidebar
+aside.ng-sidebar.menu-menu-sidebar {
 	background-color: #F7FAFC;
 	border-right: 1px solid #E1E1E1;
 	box-sizing: border-box;
@@ -32,4 +33,29 @@ aside.ng-sidebar {
 		}
 	}
 
+}
+
+// Main Sidebar
+aside.ng-sidebar.main-sidebar {
+    width: 600px;
+    max-width: 100%;
+    background-color: #fff;
+    z-index: 4 !important;
+    padding: 40px 30px;
+
+    // Close button
+    .close {
+        @include font-size(40);
+        position: absolute;
+        top: 15px;
+        right: 30px; // same as container padding
+    }
+
+}
+
+// Backdrop hacking
+.ng-sidebar__backdrop {
+    transition: opacity .3s ease-in-out;
+    opacity: 0 !important;
+    z-index: 3 !important;
 }

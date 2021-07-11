@@ -1,9 +1,23 @@
-.page-wrapper > .container-fluid {
+// Add page content padding unless there is a sidebar
+//body:not(.has-sidebar) .page-content,
+//body.has-sidebar .page-content {
+//    padding: 40px;
+//    @include media-breakpoint-down(sm) {
+//        padding: 20px;
+//    }
+//}
+body:not(.has-sidebar) .page-content.page-padding,
+body.has-sidebar .page-padding:not(.page-content) {
     padding: 40px;
     @include media-breakpoint-down(sm) {
         padding: 20px;
     }
 }
+body.has-sidebar .page-content.page-padding {
+    padding: 0 !important;
+}
+
+
 
 .bg-light {
     background-color: theme-color('cream') !important;
@@ -247,4 +261,26 @@
 // Image container
 img {
     max-width: 100%;
+}
+
+// Section Title
+.sidebar-section {
+    @include font-size(15);
+    line-height: 1.2;
+}
+.section-title {
+    background-color: #F7FAFC;
+    border-radius: 7px;
+    padding: 9px 12px;
+    margin-bottom: 12px;
+
+    a {
+        color: inherit;
+        @include font-size(14);
+        text-decoration: none;
+        i {
+            @include font-size(10);
+        }
+    }
+
 }

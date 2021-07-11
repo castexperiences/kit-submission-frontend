@@ -1,16 +1,32 @@
 .table-search {
+    position: relative;
+
+    &::before {
+        @include fa($fa-var-search);
+        @include font-size(15);
+        margin-right: 10px;
+    }
+
 
 	.ng-select {
 		@include media-breakpoint-up(sm) {
 			min-width: 140px;
 		}
 
+        margin-right: 20px;
+
 		.ng-select-container {
 			height: calc(1.5em + 0.75rem + 2px);
-			border-radius: 4px 0 0 4px;
 			box-sizing: border-box;
 			padding-top: 0.375rem;
 			padding-bottom: 0.375rem;
+            border: none;
+            border-bottom: 1px solid #E1E1E1;
+            border-radius: 0;
+
+            &:hover {
+                box-shadow: none;
+            }
 
 			.ng-value-container {
 				height: 38px;
@@ -19,6 +35,7 @@
 			.ng-value-container,
 			.ng-option {
 				@include font-size(15);
+
 			}
 
 		}
@@ -27,10 +44,12 @@
 	}
 
 	input[type="search"] {
-		border-radius: 0 4px 4px 0;
-		border-left-width: 0;
+		border-radius: 0;
+        width: 100%;
 		box-sizing: border-box;
 		height: 38px;
+        border: none !important;
+        border-bottom: 1px solid #E1E1E1 !important;
 	}
 
 
