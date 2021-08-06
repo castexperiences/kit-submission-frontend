@@ -72,17 +72,21 @@
                 @include font-size(18);
                 color: $brand-grey;
                 line-height: 1.2;
-                text-transform: lowercase;
+                text-transform: capitalize;
                 margin: 0;
                 @include media-breakpoint-down(sm) {
                     text-align: left;
                     @include font-size(16);
                 }
+            }
 
-                &.title {
-                    font-weight: bold;
+            &.discount {
+                hr {
+                    width: 35%;
+                    margin-right: 0;
                 }
             }
+
         }
     }
 
