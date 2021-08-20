@@ -144,6 +144,12 @@
         margin-left: 2px;
     }
 
+    // Xero
+    $xeroColor: #13b5ea;
+    &.xero {
+        @include button-variant($xeroColor, $xeroColor);
+    }
+
 }
 
 .small-button {
